@@ -1,0 +1,110 @@
+#footer {
+    border-top: 1px solid $border;
+
+    .general-contacts {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid $border;
+        @include media-breakpoint('lg') {
+            padding-bottom: 0.25rem;
+        }
+
+        ul {
+            @extend %flex-inline;
+            @include media-breakpoint('xl') {
+                flex-wrap: wrap;
+            }
+
+            li {
+                position: relative;
+                padding-left: 3.5rem;
+                @include media-breakpoint('lg') {
+                    width: 50%;
+                    margin-bottom: 1rem;
+                }
+                @include media-breakpoint('md') {
+                    width: 100%;
+                }
+
+                svg {
+                    @include center-y;
+                    left: 0;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    fill: $violet;
+                }
+
+                dl {
+                    dt {
+                        font-size: 0.875rem;
+                        margin-bottom: 0.25rem;
+                    }
+
+                    dd {
+                        font-size: 1rem;
+                        font-weight: bold;
+
+                        a {
+                            &:hover {
+                                color: $violet;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .col {
+        ul {
+            li {
+                margin-bottom: 1.25rem;
+
+                a {
+                    font-weight: bold;
+                }
+
+                &:hover, &.active {
+                    a {
+                        color: $violet;
+                    }
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        @extend %flex-inline;
+        border-top: 1px solid $border;
+        margin-top: 2rem;
+        padding: 1.5rem 0;
+
+        p {
+            font-size: 0.875rem;
+            color: rgba($text, 0.7);
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+
+            li {
+                margin-left: 2.5rem;
+
+                a {
+                    font-size: 0.875rem;
+                    color: rgba($text, 0.7);
+                }
+                &:hover, &.active {
+                    a {
+                        color: $text;
+                    }
+                }
+            }
+        }
+    }
+}

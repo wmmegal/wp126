@@ -1,0 +1,47 @@
+.reviews-add-form {
+    border-radius: 0.5rem;
+    @include media-breakpoint('xl') {
+        padding: 1rem;
+        margin: 0 -5vw;
+    }
+
+    p {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .red {
+        color: #e93e3e;
+    }
+
+    .rating {
+        padding-left: 1rem;
+
+        span {
+            margin-right: 0.5rem;
+        }
+    }
+
+    .files-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.5rem;
+        border: 1px dashed $violet;
+        color: $violet;
+        font-size: 0.875rem;
+        cursor: pointer;
+        text-align: center;
+        padding: 0.5rem;
+
+        input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

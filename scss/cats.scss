@@ -1,0 +1,29 @@
+#cats {
+    margin-top: -8rem;
+
+    .cat {
+        display: block;
+        border-right: 1px solid $border;
+        border-bottom: 1px solid $border;
+        transition: 0.3s all;
+
+        figure {
+            line-height: 3rem;
+            font-size: 0;
+            margin-bottom: 1rem;
+        }
+
+        .cat-name {
+            display: block;
+            font-weight: 700;
+        }
+        &:hover {
+            box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    .cat-lists {
+        border-bottom: 1px solid $border;
+        display: none;
+    }
+}

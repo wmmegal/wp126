@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>DSGN</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id="page">
+    {% include 'header.html' %}
+    <main id="main" class="container pb-4 pt-25">
+        <div class="breadcrumbs mb-1">
+            <a href="#">Главная</a>
+            <i class="icon-sep"></i>
+            <span>Статьи</span>
+        </div>
+        <div class="article">
+            <h1 class="title h1">О проекте</h1>
+            <img src="img/img-about.jpg" alt="" class="alignright">
+            <h2>Кому выплачивают деньги</h2>
+            <ul>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+            </ul>
+            <p>Самая маленькая пенсия у неработающего пенсионера приравнивается к прожиточному минимуму, который специально рассчитан для пожилых граждан ПМП. Ниже этого уровня государство попросту не имеет права назначить. ПМП утверждает правительство каждого региона для своих жителей. Неработающим пенсионерам, постоянно живущим в одном из субъектов федерации, у кого пенсия не достигает установленного минимума, назначают доплату.</p>
+            <h2>Кому выплачивают деньги</h2>
+            <p><b>Доплату из бюджета к минимальной пенсии выдают только тем, кто:</b></p>
+
+        </div>
+    </main>
+    <div id="stats" class="bg-violet-light">
+        <div class="container">
+            <div class="row">
+                <div class="col mb-1-xl">
+                    <div class="stat-item">
+                        <div class="icon">
+                            <svg class="icon-ab-1">
+                                <use xlink:href="img/symbol/sprite.svg#icon-ab-1"></use>
+                            </svg>
+                        </div>
+                        <b>516</b>
+                        <p>Выдано займов и кредитов</p>
+                    </div>
+                </div>
+                <div class="col mb-1-xl">
+                    <div class="stat-item">
+                        <div class="icon">
+                            <svg class="icon-ab-2">
+                                <use xlink:href="img/symbol/sprite.svg#icon-ab-2"></use>
+                            </svg>
+                        </div>
+                        <b>902</b>
+                        <p>Отзывов размещено</p>
+                    </div>
+                </div>
+                <div class="col mb-1-xl">
+                    <div class="stat-item">
+                        <div class="icon">
+                            <svg class="icon-ab-3">
+                                <use xlink:href="img/symbol/sprite.svg#icon-ab-3"></use>
+                            </svg>
+                        </div>
+                        <b>72</b>
+                        <p>Банков и МФО в рейтинге</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="stat-item">
+                        <div class="icon">
+                            <svg class="icon-ab-4">
+                                <use xlink:href="img/symbol/sprite.svg#icon-ab-4"></use>
+                            </svg>
+                        </div>
+                        <b>322</b>
+                        <p>Обработано жалоб</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</div>
+{% include 'modals.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>
+

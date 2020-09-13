@@ -1,0 +1,27 @@
+$gilroy:'Gilroy';
+
+$font-size: 1rem;
+
+$violet: #4b289e;
+$text: #1f1f1f;
+$border: #f6f6fa;
+$transition: 0.3s all;
+
+$enable-grid-classes:       true !default;
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+) !default;
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;

@@ -1,0 +1,36 @@
+#faq {
+    .faq {
+        background: #fff;
+        border-bottom: 1px solid $border;
+
+        .question {
+            position: relative;
+            font-weight: 700;
+            cursor: pointer;
+
+            .icon-arr-down {
+                width: 0.75rem;
+                height: 0.438rem;
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+                transition: $transition;
+            }
+
+            &.active {
+                .icon-arr-down {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .answer {
+            display: none;
+            padding-top: 0;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}

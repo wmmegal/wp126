@@ -1,0 +1,26 @@
+.cat-lists {
+    ul {
+        li {
+            margin-bottom: 1.25rem;
+
+            a {
+                font-size: 0.875rem;
+                @extend %a;
+            }
+
+            &.parent  {
+                a {
+                    font-weight: bold;
+                    display: inline-block;
+                    font-size: 1rem;
+                    color: $text;
+                    border-bottom: 2px solid $violet;
+                    padding-bottom: 0.5rem;
+                }
+            }
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+}

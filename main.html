@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>DSGN</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id="page">
+    {% include 'header.html' %}
+    <main id="main" class="pb-4">
+        <div class="bg-violet-light pb-4 mb-4">
+            <div id="banner-main">
+                <div class="container">
+                    <div class="title h1">
+                        Поможем найти лучшую
+                        кредитную карту
+                    </div>
+                    <p>Только лучшие кредитки от российских банков из ТОП-30</p>
+                </div>
+            </div>
+            <div id="cats" class="container bg-white mb-4">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-1.svg" alt="">
+                            </figure>
+                            <span class="cat-name">Лучшие</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-2.svg" alt="">
+                            </figure>
+                            <span class="cat-name">Без процентов</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-3.svg" alt="">
+                            </figure>
+                            <span class="cat-name">В день обращения</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-4.svg" alt="">
+                            </figure>
+                            <span class="cat-name">Без отказа</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-5.svg" alt="">
+                            </figure>
+                            <span class="cat-name">С плохой кредитной историей</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-6.svg" alt="">
+                            </figure>
+                            <span class="cat-name">Без справок</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-7.svg" alt="">
+                            </figure>
+                            <span class="cat-name">С льготным периодом</span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="cat pd-15">
+                            <figure>
+                                <img src="img/icon-c-8.svg" alt="">
+                            </figure>
+                            <span class="cat-name">С кэшбэком</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="cat-lists pd-15">
+                    <div class="title h3">Все категории кредитных карт</div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="ul-reset">
+                                <li class="parent"><a href="#">Клиентам</a></li>
+                                <li><a href="#">С 18 лет</a></li>
+                                <li><a href="#">С 19 лет</a></li>
+                                <li><a href="#">С 20 лет</a></li>
+                                <li><a href="#">С 18 лет</a></li>
+                                <li><a href="#">С 19 лет</a></li>
+                                <li><a href="#">С 20 лет</a></li>
+                                <li><a href="#">С 18 лет</a></li>
+                                <li><a href="#">С 19 лет</a></li>
+                                <li><a href="#">С 20 лет</a></li>
+                                <li><a href="#">С 18 лет</a></li>
+                                <li><a href="#">С 19 лет</a></li>
+                                <li><a href="#">С 20 лет</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="ul-reset">
+                                <li class="parent"><a href="#">Тип</a></li>
+                                <li><a href="#">Visa</a></li>
+                                <li><a href="#">MasterCard</a></li>
+                                <li><a href="#">Visa</a></li>
+                                <li><a href="#">MasterCard</a></li>
+                                <li><a href="#">Visa</a></li>
+                                <li><a href="#">MasterCard</a></li>
+                                <li><a href="#">Visa</a></li>
+                                <li><a href="#">MasterCard</a></li>
+                                <li><a href="#">Visa</a></li>
+                                <li><a href="#">MasterCard</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="ul-reset">
+                                <li class="parent"><a href="#">Получение</a></li>
+                                <li><a href="#">За 5 минут</a></li>
+                                <li><a href="#">За 15 минут</a></li>
+                                <li><a href="#">С доставкой на дом</a></li>
+                                <li><a href="#">За 5 минут</a></li>
+                                <li><a href="#">За 15 минут</a></li>
+                                <li><a href="#">С доставкой на дом</a></li>
+                                <li><a href="#">За 5 минут</a></li>
+                                <li><a href="#">За 15 минут</a></li>
+                                <li><a href="#">С доставкой на дом</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="ul-reset">
+                                <li class="parent"><a href="#">Льготный период</a></li>
+                                <li><a href="#">На 50 дней</a></li>
+                                <li><a href="#">На 90 дней</a></li>
+                                <li><a href="#">На 100 дней</a></li>
+                                <li><a href="#">На 120 дней</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-white w-100 btn-cat-lists">
+                    <span>Все продукты</span>
+                    <svg class="icon-arr-down">
+                        <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="products container mb-4">
+                <div class="title h1">Лучшие кредитные карты</div>
+                <div class="desc mb-15">
+                    <p>Когда деньги нужны срочно, сумма невелика, а на походы в банк и оформление документов не хватает
+                        ни времени, ни сил, отличным вариантом решения проблемы становятся быстрые займы на карту.</p>
+                </div>
+                {% for i in range(0, 5) %}
+                    <div class="product">
+                        <div class="row no-gutters">
+                            <div class="col-md-3 line">
+                                <div class="pd-15">
+                                    <figure>
+                                        <img src="img/img-card.jpg" alt="">
+                                    </figure>
+                                    <div class="rating">
+                                        <div class="stars" data-rating="3">
+                                            {% include 'stars.html' %}
+                                        </div>
+                                        <a href="#">4 отзыва</a>
+                                    </div>
+                                    <a href="#" class="btn btn-violet-light">Подробнее</a>
+                                    <a href="#" class="btn btn-violet">Оформить карту</a>
+                                </div>
+
+                            </div>
+                            <div class="col-md-9">
+                                <div class="pd-15">
+                                    <div class="title h2">Виртуальная карта Квику</div>
+                                    <div class="product-bank">
+                                        Kviku Online Bank
+                                    </div>
+                                    <div class="product-options">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Кредитный лимит
+                                                        <div class="hint">
+                                                            <i class="icon-hint">?</i>
+                                                            <div class="hint-text">
+                                                                Льготный период по уплате процентов, который
+                                                                распространяется на все операции покупок.
+                                                            </div>
+                                                        </div>
+                                                    </dt>
+                                                    <dd>до <b>100 000</b> руб.</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Льготный период
+                                                    </dt>
+                                                    <dd>до <b>120</b> дней</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Процентная ставка
+                                                    </dt>
+                                                    <dd>от <b>12%</b></dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Стоимость
+                                                    </dt>
+                                                    <dd><b>0</b> руб./год</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Доставка
+                                                    </dt>
+                                                    <dd>до <b>5</b> дней</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Рассмотрение
+                                                    </dt>
+                                                    <dd>до <b>30</b> минут</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Подтверждение дохода
+                                                    </dt>
+                                                    <dd><b>Требуется</b></dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <dl>
+                                                    <dt>
+                                                        Кэшбэк
+                                                    </dt>
+                                                    <dd>Есть</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="article hidden-text">
+                                        <p><b>Особенности</b></p>
+                                        <ul class="v-2">
+                                            <li>Не нужно платить за выпуск. Банк изготовит и доставит пластик прямо вам
+                                                на
+                                                дом. Доставка тоже бесплатная;
+                                            </li>
+                                            <li>Льготный период по уплате процентов, который распространяется на все
+                                                операции покупок.
+                                            </li>
+                                            <li>Делать платежи и переводы в интернет-банке, доступ к которому будет дан
+                                                бесплатно;
+                                            </li>
+                                        </ul>
+                                        <p>Карта Тинькофф Платинум — один из самых популярных кредитных продуктов.
+                                            Тысячи
+                                            граждан успешно ею пользуются, заказывая кредитку онлайн при наличии только
+                                            паспорта. Банк оснастил ее интересным функционалом и возможностью полностью
+                                            бесплатного пользования.
+                                        </p>
+                                        <p><b>Важно: Представитель <a href="#">Тинькофф Банка</a> будет в маске и
+                                                перчатках
+                                                при передаче карты вам в руки. Безопасная и бесплатная доставка,
+                                                минимальный
+                                                контакт с сотрудником.</b></p>
+                                        <div class="features">
+                                            <dl>
+                                                <dt>Кредитная ставка на покупки</dt>
+                                                <dt>11.99% - 29.23%</dt>
+                                            </dl>
+                                            <dl>
+                                                <dt>Кредитная ставка на наличные</dt>
+                                                <dt>23.99% - 29.23%</dt>
+                                            </dl>
+                                            <dl>
+                                                <dt>Кредитный лимит</dt>
+                                                <dt>до 500 000 ₽</dt>
+                                            </dl>
+                                            <dl>
+                                                <dt>Льготный период</dt>
+                                                <dt>100 дней</dt>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-toggle-text">
+                                        <span>Читать далее</span>
+                                        <svg class="icon-arr-down">
+                                            <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <button class="btn btn-white w-100">
+                    <span>Показать еще</span>
+                    <svg class="icon-arr-down">
+                        <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="banks container mb-4">
+                <div class="title h1">Кредитные карты банков</div>
+                <div class="desc mb-15">
+                    <p>Посмотрите предложения по кредитным картам от ведущих российских банков</p>
+                </div>
+                <div class="row no-gutters">
+                    {% for i in  range(0, 10) %}
+                        <div class="col">
+                            <a href="#" class="bank">
+                                <img src="img/img-bank.png" alt="">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="btn btn-white w-100">
+                    <span>Показать еще</span>
+                    <svg class="icon-arr-down">
+                        <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="banner container pd-3 mb-4">
+                <div class="title h1">Поможем найти лучшую
+                    кредитную карту
+                </div>
+                <p>Только лучшие кредитки от российских банков из ТОП-30</p>
+                <a href="#" class="btn btn-violet">Подобрать карту</a>
+            </div>
+            <div id="review-cards" class="container mb-4">
+                <div class="title h1">Последние отзывы</div>
+                <div class="desc mb-15">
+                    <p>Посмотрите предложения по кредитным картам от ведущих российских банков</p>
+                </div>
+                <div class="row no-gutters">
+                    {% for i in range(0, 4) %}
+                        <div class="col-lg-3 col-md-6">
+                            <div class="review pd-15">
+                                <figure>
+                                    <img src="img/img-card.jpg" alt="">
+                                </figure>
+                                <div class="rating">
+                                    <b>Александра</b>
+                                    <div class="stars" data-rating="3">
+                                        {% include 'stars.html' %}
+                                    </div>
+                                </div>
+                                <p>Странное поведение, сначала неделю навязывают карту под всеми предлогами, а потом
+                                    отказывают...
+                                    <a href="#">Читать далее</a></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a href="#" class="btn btn-white w-100">
+                    <span>Все отзывы</span>
+                    <svg class="icon-arr-right">
+                        <use xlink:href="img/symbol/sprite.svg#icon-arr-right"></use>
+                    </svg>
+                </a>
+            </div>
+            <div id="faq" class="container">
+                <div class="title h1">Вопрос-ответ</div>
+                {% for i in range(0, 5) %}
+                    <div class="faq">
+                        <div class="question pd-15">
+                            Почему кредитный рейтинг падает, хотя исправно оплачиваю кредиты?
+                            <svg class="icon-arr-down">
+                                <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
+                            </svg>
+                        </div>
+                        <div class="answer article pd-15">
+                            <p>Для оказания качественного сервиса <a href="#">финансовые организации</a> предлагают
+                                дистанционное обслуживание - онлайн-банкинг. С помощью данной услуги можно
+                                контролировать
+                                свои счета и карты в банке, а также оплачивать товары и услуги через личный кабинет на
+                                сайте
+                                или через мобильное приложение.</p>
+                            <p>Платежи и переводы на счета происходят моментально. Когда случаются задержки при
+                                проведении
+                                транзакции - бывает редко. Для того, чтобы подключить личный кабинет достаточно
+                                обратиться в
+                                офис своей финансовой организации. У многих компаний подключить онлайн-банкинг можно
+                                дистанционно в режиме онлайн - достаточно иметь карты банка или счет в банке.</p>
+                            <p>Если у вас возникли трудности при подключении услуги Личного кабинета, то вы можете
+                                обратиться в офис банка и консультанты банка вам помогут подключить услугу.
+                            <p>Вход в личный кабинет банка осуществляется с помощью ввода логина и пароля, который вы
+                                получили в финансовой организации. Также в момент входа в личный кабинет банка
+                                необходимо
+                                при себе иметь мобильный телефон - на него придет одноразовый код подтверждения входа в
+                                систему онлайн-банк: это сделано в целях защиты ваших финансовых активов.
+                            <p>Пользоваться онлайн-банком очень удобно: можно, например, настроить функцию автоплатежей
+                                -
+                                при этом не нужно будет в дальнейшем заходить в онлайн-банк для оплаты.</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="article container">
+            <h1 class="title h2">ВсеКредитныеКарты — помогаем в подборе кредита</h1>
+            <p>Одна из основных задач портала ВсеКредитныеКарты — персональный подбор кредитного продукта для
+                конкретного человека. Мы сделали все возможное, чтобы каждый смог сделать лучший выбор:</p>
+            <ul>
+                <li>Проанализировали кредитные предложения всех банков страны, разместили лучшие из них на страницах
+                    сайта;
+                </li>
+                <li>Каждое предложение сопровождается подробным описанием: что нужно для получения кредита, требования к
+                    заемщикам, документам;
+                </li>
+                <li>Проанализировали кредитные предложения всех банков страны, разместили лучшие из них на страницах
+                    сайта;
+                </li>
+                <li>Каждое предложение сопровождается подробным описанием: что нужно для получения кредита, требования к
+                    заемщикам, документам;
+                </li>
+            </ul>
+            <p>Основная задача — сделать так, чтобы посетитель сайта нашел всю необходимую ему информацию на страницах
+                ВсеКредитныеКарты. Чтобы он смог выбрать оптимальный для себя финансовый продукт и сразу обратился
+                онлайн за его предоставлением.</p>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</div>
+{% include 'modals.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>
+

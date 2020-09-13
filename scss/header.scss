@@ -1,0 +1,69 @@
+#header {
+    background: #fff;
+    position: relative;
+    z-index: 100;
+    border-bottom: 1px solid $border;
+
+    .container {
+        @extend %flex-inline;
+        z-index: 11;
+
+        #nav {
+            > ul {
+                display: flex;
+                align-items: center;
+
+                > li {
+                    margin-left: 3.5rem;
+
+                    > a {
+                        font-weight: bold;
+                        display: block;
+                        line-height: 5rem;
+
+                        .icon-arr {
+                            background: url("../img/icon-arr-down.svg") no-repeat;
+                            width: 0.5rem;
+                            height: 0.313rem;
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover {
+
+                        > a {
+                            .icon-arr {
+                                transform: rotate(180deg);
+                            }
+                        }
+
+                        .cat-lists {
+                            @extend %visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cat-lists {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid $border;
+        @extend %hidden;
+        transition: 0.5s all;
+        z-index: 101;
+        box-shadow: 0 8px 8px 4px rgba(0, 0, 0, 0.08);
+
+        .container {
+            display: block;
+            position: relative;
+            z-index: 10;
+            padding: 1.25rem 0;
+        }
+    }
+}
+

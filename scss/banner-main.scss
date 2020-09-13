@@ -1,0 +1,16 @@
+#banner-main {
+    background: url("../img/bg-girl.png") no-repeat right #ebeef4;
+    padding: 5rem 0 13.5rem 0;
+    background-size: auto 100%;
+
+
+    .title {
+        max-width: 41rem;
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        color: rgba($text, 0.7);
+    }
+}

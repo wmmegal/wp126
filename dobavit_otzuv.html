@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>DSGN</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id="page">
+    {% include 'header.html' %}
+    <main id="main" class="container max-962 pb-4 pt-25">
+        <div class="breadcrumbs mb-1">
+            <a href="#">Главная</a>
+            <i class="icon-sep"></i>
+            <span>Статьи</span>
+        </div>
+        <div class="reviews-add-form">
+            <div class="title h1">Добавить отзыв</div>
+            <p>Одна из основных задач портала ВсеКредитныеКарты — персональный подбор кредитного продукта для
+                конкретного человека. Мы сделали все возможное, чтобы каждый смог сделать лучший выбор:</p>
+            <form action="" id="add-review" class="form">
+                <div class="input-autocomplete mb-1">
+                    <label class="form-field ">
+                        <input type="text" name="product_name" placeholder="Введите название банка или продукта">
+                    </label>
+                    <button type="button" class="btn-clear">
+                        <i class="icon-cross"></i>
+                    </button>
+                    <div class="search-results">
+                        <ul class="ul-reset">
+                            {% for i in range(0, 5) %}
+                                <li data-title="Тинькофф Платинум" class="search-item">
+                                    <figure>
+                                        <img src="img/img-card.jpg" alt="">
+                                    </figure>
+                                    <div class="search-item-body">
+                                        <b>Тинькофф Платинум</b>
+                                        <div class="type">Кредитная карта</div>
+                                    </div>
+                                    <div class="rating">
+                                        <a href="#" target="_blank">8 отзывов</a>
+                                        <div class="stars" data-rating="3">
+                                            {% include 'stars.html' %}
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                            <li class="no-results">
+                                По вашему запросу <b>“Тинькофф”</b> ничего не найдено
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-6 mb-1">
+                        <label class="form-field">
+                            <input type="text" name="name" placeholder="Ваше имя">
+                        </label>
+                    </div>
+                    <div class="col-md-6 mb-1">
+                        <label class="form-field">
+                            <input type="email" name="email" placeholder="E-Mail">
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="rating">
+                            <span>Оценка <span>*</span></span>
+                            <div class="stars clickable" data-rating="0">
+                                {% include 'stars.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="form-field mb-1">
+                    <textarea name="text" placeholder="Ваш комментарий*"></textarea>
+                </label>
+                <label class="form-field mb-1">
+                    <input type="text" name="advantages" placeholder="Расскажите о преимуществах">
+                </label>
+                <label class="form-field mb-1">
+                    <input type="text" name="disadvantages" placeholder="Расскажите о недостатках"
+                           class="input-error">
+                    <span class="error">
+                        Поле обязательна к  заполнению
+                    </span>
+                </label>
+                <label for="file" class="files-area mb-1">
+                    <span>Нажмите или перетащите для загрузки фотографии</span>
+                    <input type="file" id="file">
+                </label>
+                <div class="row download-images">
+
+                    <div class="col-md-2 col-sm-3">
+                        <img src="img/img-card.jpg"
+                             alt="">
+                        <input type="hidden" name="gallery[]" value="937">
+                        <button class="btn-del-img" type="button" data-id="937">X</button>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3">
+                        <img src="img/img-card.jpg"
+                             alt="">
+                        <input type="hidden" name="gallery[]" value="939">
+                        <button class="btn-del-img" type="button" data-id="939">X</button>
+                    </div>
+
+                </div>
+                <div class="info mb-1">
+                    * Поля, обязательные для заполнения
+                </div>
+                <div class="btn-wrap">
+                    <button class="btn btn-violet">Добавить отзыв</button>
+                    <div class="rule">
+                        Нажимая кнопку «Добавить отзыв» вы соглашаетесь с <a href="#" target="_blank">политикой
+                            обработки персональных данных и пользовательским соглашением</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</div>
+{% include 'modals.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>
+

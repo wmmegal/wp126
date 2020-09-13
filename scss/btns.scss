@@ -1,0 +1,49 @@
+.btn, a.btn {
+    @extend %btn;
+    font-family: $gilroy;
+    padding: 0 2rem;
+    line-height: 3.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: $transition;
+
+    span {
+        margin-right: 0.25rem;
+    }
+
+    [class*=icon] {
+        margin-top: -1px;
+    }
+
+    &.btn-violet {
+        background: $violet;
+        color: #fff;
+
+        &:hover {
+            background: #5d3da7;
+        }
+    }
+
+    &.btn-violet-light {
+        background: #f6f6fa;
+        color: $violet;
+
+        &:hover {
+            background-color: rgba(75, 40, 158, 0.1);
+        }
+    }
+
+    &.btn-white {
+        background: #fff;
+    }
+
+    svg {
+        transition: $transition;
+    }
+
+    &.active {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+}

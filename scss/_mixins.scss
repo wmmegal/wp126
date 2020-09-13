@@ -1,0 +1,228 @@
+@mixin media-breakpoint($type) {
+    $breakpoints: (
+            'xl' : '(max-width: 1169px)',
+            'lg' : '(max-width: 991px)',
+            'md' : '(max-width: 767px)',
+            'sm' : '(max-width: 575px)',
+    );
+
+    @media #{map_get($breakpoints, $type)} {
+        @content
+    }
+
+}
+
+@mixin center-xy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin all-space {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin circle($width, $color) {
+    width: $width * 1px;
+    height: $width * 1px;
+    border-radius: $width/2 * 1px;
+    background: $color;
+}
+
+@mixin text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Vendor prefixes
+$sass-burger-add-vendor-prefixes: true !default;
+
+// Burger
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+
+    @if $sass-burger-add-vendor-prefixes {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    user-select: none;
+
+    &, &:before, &:after {
+        display: block;
+        width: $width;
+        height: $height;
+        background-color: $color;
+        @if $border-radius != 0 {
+            border-radius: $border-radius;
+        }
+
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transition-property: background-color, -webkit-transform;
+            -moz-transition-property: background-color, -moz-transform;
+            -o-transition-property: background-color, -o-transform;
+        }
+        transition-property: background-color, transform;
+
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transition-duration: $transition-duration;
+            -moz-transition-duration: $transition-duration;
+            -o-transition-duration: $transition-duration;
+        }
+        transition-duration: $transition-duration;
+    }
+
+    &:before, &:after {
+        position: absolute;
+        content: "";
+    }
+
+    &:before {
+        top: -($height + $gutter);
+    }
+
+    &:after {
+        top: $height + $gutter;
+    }
+}
+
+
+// Select parts of the burger
+@mixin burger-parts {
+    &, &:before, &:after {
+        @content;
+    }
+}
+
+@mixin burger-top {
+    &:before {
+        @content;
+    }
+}
+
+@mixin burger-middle {
+    & {
+        @content;
+    }
+}
+
+@mixin burger-bottom {
+    &:after {
+        @content;
+    }
+}
+
+
+// Burger animations
+@mixin burger-to-cross {
+    & {
+        background-color: transparent;
+    }
+    &:before {
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+            -moz-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+            -ms-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+            -o-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        }
+        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+    &:after {
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+            -moz-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+            -ms-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+            -o-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        }
+        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+}
+
+
+
+
+@mixin css-checkbox(
+    $size: '16px',
+    $selectedColor: #444,
+    $checkColor: #FFF,
+    $valign: 'middle',
+    $border-radius: 0,
+    $borderColor: #000,
+) {
+    display: none;
+
+    &:checked + i {
+        background: #{$selectedColor};
+        border-color: #{$borderColor};
+
+        &:hover:after { opacity: 1; }
+
+        &:after {
+            opacity: 1;
+            border-color: #{$checkColor};
+        }
+    }
+
+    + i {
+        box-sizing: border-box;
+        &:before, &:after {
+            box-sizing: border-box;
+        }
+    }
+    + i {
+        position: relative;
+        display: inline-block;
+        top: -1px;
+        width: #{$size};
+        height: #{$size};
+        margin: 0;
+        vertical-align: #{$valign};
+        border: 0.063rem solid #{$borderColor};
+        transition: background 200ms ease;
+        border-radius: #{$border-radius};
+
+        background: #{$selectedColor};
+        font-size: #{$size};
+        cursor: pointer;
+
+        &:hover:after { opacity: .5; }
+
+        &:after {
+            content: '';
+            opacity: 0;
+            transform: translateZ(1px) rotate(-45deg);
+            outline: 1px solid transparent; // hack to prevent antialias atrifacts in firefox
+            position: absolute;
+            top: 18%;
+            left: 15%;
+            width: .68em;
+            height: .4em;
+            border: .15em solid #222;
+            border-top: none;
+            border-right: none;
+            background: rgba(0, 0, 0, 0);
+        }
+    }
+}
