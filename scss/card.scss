@@ -1,0 +1,60 @@
+#card {
+    .title {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .card-bank {
+        margin-bottom: 1.25rem;
+    }
+
+    .rating {
+        margin-bottom: 2rem;
+    }
+
+    .card-options {
+        [class*=col] {
+            margin-bottom: 1rem;
+
+            dl {
+                line-height: 1.5rem;
+
+                dt {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+
+    .btn-more {
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+
+        span {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        svg {
+            transition: $transition;
+        }
+
+        &.active {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    figure {
+        margin-bottom: 1rem;
+    }
+
+    .form-field {
+        .label {
+            color: #636363;
+        }
+    }
+}

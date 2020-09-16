@@ -1,5 +1,7 @@
 .table {
     background: #fff;
+    margin-bottom: 1.5rem;
+
     table {
         width: 100%;
 
@@ -21,5 +23,9 @@
                 font-weight: bold;
             }
         }
+    }
+
+    &:last-child {
+        margin: 0;
     }
 }

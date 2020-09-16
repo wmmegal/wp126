@@ -10,7 +10,7 @@
 <div id="page">
     {% include 'header.html' %}
     <main id="main">
-        <div id="card" class="container mb-4 pt-25">
+        <div id="card" class="container pb-4 pt-25">
             <div class="breadcrumbs mb-1">
                 <a href="#">Главная</a>
                 <i class="icon-sep"></i>
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn-mote">
+                    <button type="button" class="btn-more">
                         <span>Подробные условия</span>
                         <svg class="icon-arr-down">
                             <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
@@ -96,7 +96,7 @@
                     <figure>
                         <img src="img/img-card-3.jpg" alt="">
                     </figure>
-                    <div class="mb-2 input-with-slider">
+                    <div class="mb-15 input-with-slider">
                         <label class="form-field">
                             <span class="label">Желаемый лимит</span>
                             <input type="text" name="limit" value="48 000">
@@ -108,105 +108,102 @@
             </div>
 
         </div>
-        <div class="bg-violet-light mb-4">
-            <div class="container">
-                <div class="calc">
-                    <div class="title h2">Калькулятор платежей по кредитной карте</div>
-                    <div class="row">
-                        <div class="col-lg-6 mb-1">
-                            <div class="input-with-slider no-select">
-                                <label class="form-field">
-                                    <span class="label">Сумма кредита</span>
-                                    <input type="text" name="credit_limit" value="48 000">
-                                </label>
-                                <div class="input-slider" data-min="1000" data-max="100000"
-                                     data-value="20000" data-join="₽"></div>
-                            </div>
+        <div class="bg-violet-light pb-25 pt-25">
+            <div class="calc container pd-15 bg-white" data-percent="36">
+                <div class="title h2">Калькулятор платежей по кредитной карте</div>
+                <div class="row">
+                    <div class="col-lg-6 mb-15">
+                        <div class="input-with-slider no-select">
+                            <label class="form-field">
+                                <span class="label">Сумма кредита</span>
+                                <input type="text" name="credit_limit" value="48 000">
+                            </label>
+                            <div class="input-slider slider-sum" data-min="1000" data-max="100000"
+                                 data-value="20000" data-join="₽"></div>
                         </div>
-                        <div class="col-lg-6 mb-1">
-                            <div class="input-with-slider no-select">
-                                <label class="form-field">
-                                    <span class="label">Срок займа</span>
-                                    <input type="text" name="spending_per_month" value="Пока незнаю">
-                                </label>
-                                <div class="input-slider" data-min="1" data-max="50" data-value="10"
-                                     data-join="дней"></div>
+                    </div>
+                    <div class="col-lg-6 mb-15">
+                        <div class="input-with-slider no-select">
+                            <label class="form-field">
+                                <span class="label">Срок займа</span>
+                                <input type="text" name="spending_per_month" value="Пока незнаю">
+                            </label>
+                            <div class="input-slider slider-months" data-min="1" data-max="12" data-value="2" data-step="1" data-join="месяц"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-15">
+                        <div class="calc-detail">
+                            <dl>
+                                <dt>Сумма погашения</dt>
+                                <dd><span class="repayment"></span></dd>
+                            </dl>
+                            <dl>
+                                <dt>Платеж в месяц</dt>
+                                <dd><span class="month-payment"></span></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="calc-detail mb-15">
+                            <dl>
+                                <dt>Погашение</dt>
+                                <dd><span class="repayment-date"></span></dd>
+                            </dl>
+                            <dl>
+                                <dt>Переплата</dt>
+                                <dd><span class="overpayment"></span></dd>
+                            </dl>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-violet-light w-100 btn-schedule">График платежей</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <a href="#" class="btn btn-violet w-100">Оформить карту</a>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6 mb-1">
-                            <div class="filter-detail">
-                                <dl>
-                                    <dt>Сумма погашения</dt>
-                                    <dd>10 000 ₽</dd>
-                                </dl>
-                                <dl>
-                                    <dt>Платеж в месяц</dt>
-                                    <dd>5 000 ₽</dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-1">
-                            <div class="filter-detail">
-                                <dl>
-                                    <dt>Погашение</dt>
-                                    <dd>26.04.2020</dd>
-                                </dl>
-                                <dl>
-                                    <dt>Переплата</dt>
-                                    <dd>26.04.2020</dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 mb-1">
-                            <a href="#" class="btn btn-yellow-light">График платежей</a>
-                        </div>
-                        <div class="col-lg-6 mb-1">
-                            <a href="#" class="btn btn-yellow">Оформить карту займ</a>
-                        </div>
-                    </div>
-                    <div class="payment-schedule">
-                        <div class="title h2">График платежей</div>
-                        <div class="table">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>№, месяц</th>
-                                    <th>Сумма платежа</th>
-                                    <th>Проценты + долг</th>
-                                    <th>Остаток долга</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1. 13.07.2020</td>
-                                    <td>14 000</td>
-                                    <td>1 500 + 12 500</td>
-                                    <td>137 500</td>
-                                </tr>
-                                <tr>
-                                    <td>1. 13.07.2020</td>
-                                    <td>14 000</td>
-                                    <td>1 500 + 12 500</td>
-                                    <td>137 500</td>
-                                </tr>
-                                <tr>
-                                    <td>1. 13.07.2020</td>
-                                    <td>14 000</td>
-                                    <td>1 500 + 12 500</td>
-                                    <td>137 500</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                </div>
+                <div class="payment-schedule">
+                    <div class="title h2">График платежей</div>
+                    <div class="table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>№, месяц</th>
+                                <th>Сумма платежа</th>
+                                <th>Проценты + долг</th>
+                                <th>Остаток долга</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1. 13.07.2020</td>
+                                <td>14 000</td>
+                                <td>1 500 + 12 500</td>
+                                <td>137 500</td>
+                            </tr>
+                            <tr>
+                                <td>1. 13.07.2020</td>
+                                <td>14 000</td>
+                                <td>1 500 + 12 500</td>
+                                <td>137 500</td>
+                            </tr>
+                            <tr>
+                                <td>1. 13.07.2020</td>
+                                <td>14 000</td>
+                                <td>1 500 + 12 500</td>
+                                <td>137 500</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="card-details" class="container mb-4">
+        <div id="card-details" class="container mb-4 pt-25">
             <div class="endpoint-names">
                 <ul class="ul-reset">
                     <li class="active"><a href="#endpoint-1" class="btn-anchor">О карте</a></li>
@@ -216,388 +213,362 @@
                     <li><a href="#endpoint-5" class="btn-anchor">Отзывы</a></li>
                 </ul>
             </div>
-            <div class="col-lg-9">
-                <div class="article mb-2">
-                    <h2>Лучшая кредитная карта в Тинькофф Банке</h2>
-                    <p>CreditPlus – сервис быстрого онлайн-кредитования, один из трех ведущих в России по
-                        скорости и объемам кредитования. Все оформление происходит через интернет, а деньги
-                        можно получить в любой точке мира, где есть доступ к нему. Быстрая обработка заявок
-                        позволяет максимально сократить время до того момента, как средства окажутся в руках
-                        клиента.</p>
-                    <p><b>Важно: Представитель Тинькофф Банка будет в маске и перчатках при передаче карты вам в руки.
-                            Безопасная и бесплатная доставка, минимальный контакт с сотрудником.</b></p>
-                </div>
-                <div class="advantages-disadvantages mb-2">
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <div class="title h2">Преимущества</div>
-                            <ul class="ul-reset">
-                                <li>Первый займ без процентов</li>
-                                <li>Большие лимиты одобрения для первого займа</li>
-                                <li>Нет навязанной страховки и скрытых процентов</li>
-                                <li>Большие лимиты (до 80000 рублей) для
-                                    постоянных клиентов
-                                </li>
-                                <li>Первый займ без процентов</li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <div class="title h2">Недостатки</div>
-                            <ul class="ul-reset v-2">
-                                <li>Задержка оплаты займа (до 8-10 часов)</li>
-                                <li>Нельзя получить займ на электронные кошельки</li>
-                                <li>Часто "забывают" обновить данные по займу в
-                                    Бюро Кредитных Историй
-                                </li>
-                                <li>Частые проблемы с техподдержкой</li>
-                            </ul>
-                        </div>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="article mb-2">
+                        <h2>Лучшая кредитная карта в Тинькофф Банке</h2>
+                        <p>CreditPlus – <span>сервис быстрого онлайн-кредитования</span>, один из трех ведущих в России по
+                            скорости и объемам кредитования. Все оформление происходит через интернет, а деньги
+                            можно получить в любой точке мира, где есть доступ к нему. Быстрая обработка заявок
+                            позволяет максимально сократить время до того момента, как средства окажутся в руках
+                            клиента.</p>
+                        <p><b>Важно: Представитель Тинькофф Банка будет в маске и перчатках при передаче карты вам в руки.
+                                Безопасная и бесплатная доставка, минимальный контакт с сотрудником.</b></p>
+                        <blockquote>
+                            Важно! Как правило, вышеуказанных документов бывает достаточно. Если есть необходимость, банк может затребовать дополнительные справки.
+                        </blockquote>
+                        <blockquote class="v-2">
+                            Важно! Как правило, вышеуказанных документов бывает достаточно. Если есть необходимость, банк может затребовать дополнительные справки.
+                        </blockquote>
                     </div>
-                </div>
-
-                <div class="endpoint article" id="endpoint-1">
-                    <div class="title h1">Условия займа в CreditPlus</div>
-                    <p>CreditPlus предлагает на выбор несколько вариантов займов. Новые клиенты могут получить
-                        <span>от 1500 до 15000</span> руб. на срок от 5 до 15 дней под 0%. Второй и последующие
-                        займы предоставляются согласно установленным тарифам:</p>
-                    <div class="table">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Тариф</th>
-                                <th>Условия (процент, сумма, срок)</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for i in range(0, 10) %}
-                                <tr>
-                                    <td>Старт 0%</td>
-                                    <td>0% в день, доступно только для первого займа <br>
-                                        от 1500 до 15000 рублей <br>
-                                        от 5 до 15 дней
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                    <blockquote>
-                        Важным преимуществом CreditPlus является предоставление постоянным клиентам долгосрочных
-                        займов на срок от 10 до 18 недель с выплатами каждые две недели. Это тарифы “Турбо” и
-                        “Супертурбо”, по которым сумма микрокредита составит до 80 тыс. руб., а процентная
-                        ставка снизится до 0,8% в день.
-                    </blockquote>
-                    <p>В MoneyMan существует программа лояльности. Ее суть заключается в том, чтобы копить и
-                        тратить бонусные баллы. Своевременный возврат средств, рекомендации знакомым и отзывы в
-                        соцсетях поощряются бонусными баллами.</p>
-                    <div class="wp-caption aligncenter">
-                        <img src="img/img-article.jpg" alt="">
-                        <div class="wp-caption-text">
-                            Программа лояльности в Moneyman – накопленные баллы и самые выгодные тарифы.
+                    <div class="advantages-disadvantages mb-15">
+                        <div class="row no-gutters">
+                            <div class="col">
+                                <div class="title h5">Преимущества</div>
+                                <ul class="ul-reset">
+                                    <li>Первый займ без процентов</li>
+                                    <li>Большие лимиты одобрения для первого займа</li>
+                                    <li>Нет навязанной страховки и скрытых процентов</li>
+                                    <li>Большие лимиты (до 80000 рублей) для
+                                        постоянных клиентов
+                                    </li>
+                                    <li>Первый займ без процентов</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <div class="title h5">Недостатки</div>
+                                <ul class="ul-reset v-2">
+                                    <li>Задержка оплаты займа (до 8-10 часов)</li>
+                                    <li>Нельзя получить займ на электронные кошельки</li>
+                                    <li>Часто "забывают" обновить данные по займу в
+                                        Бюро Кредитных Историй
+                                    </li>
+                                    <li>Частые проблемы с техподдержкой</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <p>Баллами можно погашать проценты по займу, оплачивать процедуру пролонгации. Чем больше
-                        баллов накопит заёмщик, тем быстрее он получит следующий уровень лояльности (тариф).
-                        Потратить баллы на погашение процентов можно в следующей пропорции: 100 баллов = 1
-                        рубль. Как только заёмщик тратит баллы, он утрачивает возможность перейти на следующий
-                        тариф.</p>
-                </div>
-                <div class="endpoint article" id="endpoint-2">
-                    <div class="title h1">Требования к заемщикам</div>
-                    <ul>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                    </ul>
-                    <p>Также для получения займа в Манимен понадобятся действительный паспорт РФ, СНИЛС (карта
-                        пенсионного страхования), мобильный телефон и адрес электронной почты. Если клиент хочет
-                        получить микрокредит безналично – то банковская карта (VISA или MasterCard) любого банка
-                        России или реквизиты банковского счета.</p>
-                </div>
-                <div class="endpoint article" id="endpoint-3">
-                    <div class="title h1">Оформление заявки в CreditPlus – 5 минут</div>
-                    <ul>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                    </ul>
-                    <p>Также для получения займа в Манимен понадобятся действительный паспорт РФ, СНИЛС (карта
-                        пенсионного страхования), мобильный телефон и адрес электронной почты. Если клиент хочет
-                        получить микрокредит безналично – то банковская карта (VISA или MasterCard) любого банка
-                        России или реквизиты банковского счета.</p>
-                </div>
-                <div class="endpoint article">
-                    <div class="title h1">Шансы на одобрение заявки в CreditPlus – 81%</div>
-                    <p>Как и в любой другой организации, в CreditPlus возможны отказы. Они обусловлены чаще
-                        всего ложной информацией, которую предоставляет заемщик. Также отказывают из-за
-                        механических ошибок при введении данных. Еще одним препятствием на пути к получению
-                        микрокредита станет непогашенная задолженность перед банком или другой МФК/МФО. В
-                        CreditPlus нельзя взять новый займ, не погасив предыдущий.</p>
-                </div>
-                <div class="endpoint article">
-                    <div class="title h1">Лучшая кредитная карта</div>
-                    <div class="products">
-                        <div class="product">
-                            <div class="row no-gutters">
-                                <div class="col-md-4 line">
-                                    <div class="pd-15">
-                                        <figure>
-                                            <img src="img/img-card.jpg" alt="">
-                                        </figure>
-                                        <div class="rating">
-                                            <div class="stars" data-rating="3">
-                                                {% include 'stars.html' %}
+                    <div class="endpoint article" id="endpoint-1">
+                        <div class="title h2">Бесплатная кредитная карта</div>
+                        <p>CreditPlus предлагает на выбор несколько вариантов займов. Новые клиенты могут получить
+                            <span>от 1500 до 15000</span> руб. на срок от 5 до 15 дней под 0%. Второй и последующие
+                            займы предоставляются согласно установленным тарифам:</p>
+                        <div class="table">
+                            <table>
+                                <tbody>
+                                {% for i in range(0, 10) %}
+                                    <tr>
+                                        <td>Платежная система</td>
+                                        <td>MasterCard
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <blockquote>
+                            Важным преимуществом CreditPlus является предоставление постоянным клиентам долгосрочных
+                            займов на срок от 10 до 18 недель с выплатами каждые две недели. Это тарифы “Турбо” и
+                            “Супертурбо”, по которым сумма микрокредита составит до 80 тыс. руб., а процентная
+                            ставка снизится до 0,8% в день.
+                        </blockquote>
+                        <p>В MoneyMan существует программа лояльности. Ее суть заключается в том, чтобы копить и
+                            тратить бонусные баллы. Своевременный возврат средств, рекомендации знакомым и отзывы в
+                            соцсетях поощряются бонусными баллами.</p>
+                        <div class="wp-caption aligncenter">
+                            <img src="img/img-article.jpg" alt="">
+                            <div class="wp-caption-text">
+                                Программа лояльности в Moneyman – накопленные баллы и самые выгодные тарифы.
+                            </div>
+                        </div>
+                        <p>Баллами можно погашать проценты по займу, оплачивать процедуру пролонгации. Чем больше
+                            баллов накопит заёмщик, тем быстрее он получит следующий уровень лояльности (тариф).
+                            Потратить баллы на погашение процентов можно в следующей пропорции: 100 баллов = 1
+                            рубль. Как только заёмщик тратит баллы, он утрачивает возможность перейти на следующий
+                            тариф.</p>
+                    </div>
+                    <div class="endpoint article" id="endpoint-2">
+                        <div class="title h2">Требования к заемщикам</div>
+                        <ul>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                        </ul>
+                        <p>Также для получения займа в Манимен понадобятся действительный паспорт РФ, СНИЛС (карта
+                            пенсионного страхования), мобильный телефон и адрес электронной почты. Если клиент хочет
+                            получить микрокредит безналично – то банковская карта (VISA или MasterCard) любого банка
+                            России или реквизиты банковского счета.</p>
+                    </div>
+                    <div class="endpoint article" id="endpoint-3">
+                        <div class="title h2">Оформление заявки в CreditPlus – 5 минут</div>
+                        <ul>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                        </ul>
+                        <p>Также для получения займа в Манимен понадобятся действительный паспорт РФ, СНИЛС (карта
+                            пенсионного страхования), мобильный телефон и адрес электронной почты. Если клиент хочет
+                            получить микрокредит безналично – то банковская карта (VISA или MasterCard) любого банка
+                            России или реквизиты банковского счета.</p>
+                    </div>
+                    <div class="endpoint article">
+                        <div class="title h2">Шансы на одобрение заявки в CreditPlus – 81%</div>
+                        <p>Как и в любой другой организации, в CreditPlus возможны отказы. Они обусловлены чаще
+                            всего ложной информацией, которую предоставляет заемщик. Также отказывают из-за
+                            механических ошибок при введении данных. Еще одним препятствием на пути к получению
+                            микрокредита станет непогашенная задолженность перед банком или другой МФК/МФО. В
+                            CreditPlus нельзя взять новый займ, не погасив предыдущий.</p>
+                    </div>
+                    <div class="endpoint article">
+                        <div class="title h2">Лучшая кредитная карта</div>
+                        <div class="products">
+                            <div class="product">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4 line">
+                                        <div class="pd-15">
+                                            <figure>
+                                                <img src="img/img-card.jpg" alt="">
+                                            </figure>
+                                            <div class="rating">
+                                                <div class="stars" data-rating="3">
+                                                    {% include 'stars.html' %}
+                                                </div>
+                                                <a href="#">4 отзыва</a>
                                             </div>
-                                            <a href="#">4 отзыва</a>
+                                            <a href="#" class="btn btn-violet-light">Подробнее</a>
+                                            <a href="#" class="btn btn-violet">Оформить карту</a>
                                         </div>
-                                        <a href="#" class="btn btn-violet-light">Подробнее</a>
-                                        <a href="#" class="btn btn-violet">Оформить карту</a>
-                                    </div>
 
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="pd-15">
-                                        <div class="title h2">Виртуальная карта Квику</div>
-                                        <div class="product-bank">
-                                            Kviku Online Bank
-                                        </div>
-                                        <div class="product-options">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <dl>
-                                                        <dt>
-                                                            Кредитный лимит
-                                                            <div class="hint">
-                                                                <i class="icon-hint">?</i>
-                                                                <div class="hint-text">
-                                                                    Льготный период по уплате процентов, который
-                                                                    распространяется на все операции покупок.
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="pd-15">
+                                            <div class="title h3">Виртуальная карта Квику</div>
+                                            <div class="product-bank">
+                                                Kviku Online Bank
+                                            </div>
+                                            <div class="product-options">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>
+                                                                Кредитный лимит
+                                                                <div class="hint">
+                                                                    <i class="icon-hint">?</i>
+                                                                    <div class="hint-text">
+                                                                        Льготный период по уплате процентов, который
+                                                                        распространяется на все операции покупок.
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </dt>
-                                                        <dd>до <b>100 000</b> руб.</dd>
-                                                    </dl>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <dl>
-                                                        <dt>
-                                                            Льготный период
-                                                        </dt>
-                                                        <dd>до <b>120</b> дней</dd>
-                                                    </dl>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <dl>
-                                                        <dt>
-                                                            Процентная ставка
-                                                        </dt>
-                                                        <dd>от <b>12%</b></dd>
-                                                    </dl>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <dl>
-                                                        <dt>
-                                                            Стоимость
-                                                        </dt>
-                                                        <dd><b>0</b> руб./год</dd>
-                                                    </dl>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <dl>
-                                                        <dt>
-                                                            Доставка
-                                                        </dt>
-                                                        <dd>до <b>5</b> дней</dd>
-                                                    </dl>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <dl>
-                                                        <dt>
-                                                            Рассмотрение
-                                                        </dt>
-                                                        <dd>до <b>30</b> минут</dd>
-                                                    </dl>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="endpoint article" id="endpoint-4">
-                    <div class="title h1">Способы получения займа</div>
-                    <ul>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                        <li>Гражданство Российской Федерации</li>
-                    </ul>
-                </div>
-                <div class="endpoint article">
-                    <div class="title h1">Полезные ссылки</div>
-                    <ul>
-                        <li><a href="#">Общие условия договора потребительского займа ООО МФК «Мани Мен»</a>
-                        </li>
-                        <li><a href="#">Общие условия договора потребительского займа ООО МФК «Мани Мен»</a>
-                        </li>
-                        <li><a href="#">Общие условия договора потребительского займа ООО МФК «Мани Мен»</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="endpoint">
-                    <div class="title h1">Скачать мобильные приложения</div>
-                    <div class="apps">
-                        <a href="#" class="btn btn-yellow" rel="nofollow" target="_blank">
-                            <svg class="icon-ios">
-                                <use xlink:href="img/symbol/sprite.svg#icon-ios"></use>
-                            </svg>
-                            <span>IOS</span>
-                        </a>
-                        <a href="#" class="btn btn-yellow" rel="nofollow" target="_blank">
-                            <svg class="icon-android">
-                                <use xlink:href="img/symbol/sprite.svg#icon-android"></use>
-                            </svg>
-                            <span>Android</span>
-                        </a>
-                        <a href="#" class="btn btn-yellow" rel="nofollow" target="_blank">
-                            <svg class="icon-windows">
-                                <use xlink:href="img/symbol/sprite.svg#icon-windows"></use>
-                            </svg>
-                            <span>WindowsPhone</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="endpoint article">
-                    <div class="title h1">Кредитные карты с такими же условиями</div>
-                    <div class="tags">
-                        <a href="#">10000 рублей</a>
-                        <a href="#">15000 рублей</a>
-                        <a href="#">30000 рублей</a>
-                        <a href="#">10000 рублей</a>
-                        <a href="#">15000 рублей</a>
-                        <a href="#">30000 рублей</a>
-                        <a href="#">10000 рублей</a>
-                        <a href="#">15000 рублей</a>
-                        <a href="#">30000 рублей</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 ">
-                <div class="sticky">
-                    <div class="products-v">
-                        <div class="product pd-15 bg-violet-light">
-                            <figure>
-                                <img src="img/img-card.jpg" alt="">
-                            </figure>
-                            <div class="rating">
-                                <div class="stars" data-rating="3">
-                                    {% include 'stars.html' %}
-                                </div>
-                                <a href="#">4 отзыва</a>
-                            </div>
-                            <div class="product-options">
-                                <dl>
-                                    <dt>
-                                        Кредитный лимит
-                                        <div class="hint">
-                                            <i class="icon-hint">?</i>
-                                            <div class="hint-text">
-                                                Льготный период по уплате процентов, который
-                                                распространяется на все операции покупок.
-                                            </div>
-                                        </div>
-                                    </dt>
-                                    <dd>до <b>100 000</b> руб.</dd>
-                                </dl>
-                                <dl>
-                                    <dt>
-                                        Льготный период
-                                    </dt>
-                                    <dd>до <b>120</b> дней</dd>
-                                </dl>
-                                <dl>
-                                    <dt>
-                                        Процентная ставка
-                                    </dt>
-                                    <dd>от <b>12%</b></dd>
-                                </dl>
-                            </div>
-                            <a href="#" class="btn btn-violet">Оформить карту</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="bg-violet-light pb-4">
-            <div class="products-v container mb-4">
-                <div class="title h1">Похожие карты</div>
-                <div class="wrap">
-                    <div class="slider-products">
-                        {% for i in range(0, 10) %}
-                            <div>
-                                <div class="product pd-15 bg-white">
-                                    <a href="#" class="product-title">Виртуальная карта Квику</a>
-                                    <div class="product-bank">
-                                        Kviku Online Bank
-                                    </div>
-                                    <div class="rating">
-                                        <div class="stars" data-rating="3">
-                                            {% include 'stars.html' %}
-                                        </div>
-                                        <a href="#">4 отзыва</a>
-                                    </div>
-                                    <figure>
-                                        <img src="img/img-card.jpg" alt="">
-                                    </figure>
-                                    <div class="product-options">
-                                        <dl>
-                                            <dt>
-                                                Кредитный лимит
-                                                <div class="hint">
-                                                    <i class="icon-hint">?</i>
-                                                    <div class="hint-text">
-                                                        Льготный период по уплате процентов, который
-                                                        распространяется на все операции покупок.
+                                                            </dt>
+                                                            <dd>до <b>100 000</b> руб.</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>
+                                                                Льготный период
+                                                            </dt>
+                                                            <dd>до <b>120</b> дней</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>
+                                                                Процентная ставка
+                                                            </dt>
+                                                            <dd>от <b>12%</b></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>
+                                                                Стоимость
+                                                            </dt>
+                                                            <dd><b>0</b> руб./год</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>
+                                                                Доставка
+                                                            </dt>
+                                                            <dd>до <b>5</b> дней</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <dl>
+                                                            <dt>
+                                                                Рассмотрение
+                                                            </dt>
+                                                            <dd>до <b>30</b> минут</dd>
+                                                        </dl>
                                                     </div>
                                                 </div>
-                                            </dt>
-                                            <dd>до <b>100 000</b> руб.</dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>
-                                                Льготный период
-                                            </dt>
-                                            <dd>до <b>120</b> дней</dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>
-                                                Процентная ставка
-                                            </dt>
-                                            <dd>от <b>12%</b></dd>
-                                        </dl>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <a href="#" class="btn btn-violet-light">Подробнее</a>
-                                    <a href="#" class="btn btn-violet">Оформить карту</a>
                                 </div>
                             </div>
-                        {% endfor %}
-
+                        </div>
                     </div>
-                    <button type="button" class="slick-prev">
-                        <svg class="icon-arr-prev">
-                            <use xlink:href="img/symbol/sprite.svg#icon-arr-prev"></use>
-                        </svg>
-                    </button>
-                    <button type="button" class="slick-next">
-                        <svg class="icon-arr-next">
-                            <use xlink:href="img/symbol/sprite.svg#icon-arr-next"></use>
-                        </svg>
-                    </button>
+                    <div class="endpoint article" id="endpoint-4">
+                        <div class="title h2">Способы получения займа</div>
+                        <ul>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                            <li>Гражданство Российской Федерации</li>
+                        </ul>
+                    </div>
+                    <div class="endpoint">
+                        <div class="title h2">Скачать мобильные приложения</div>
+                        <div class="apps">
+                            <a href="#" class="btn btn-violet-light" rel="nofollow" target="_blank">
+                                <svg class="icon-ios">
+                                    <use xlink:href="img/symbol/sprite.svg#icon-ios"></use>
+                                </svg>
+                                <span>IOS</span>
+                            </a>
+                            <a href="#" class="btn btn-violet-light" rel="nofollow" target="_blank">
+                                <svg class="icon-android">
+                                    <use xlink:href="img/symbol/sprite.svg#icon-android"></use>
+                                </svg>
+                                <span>Android</span>
+                            </a>
+                            <a href="#" class="btn btn-violet-light" rel="nofollow" target="_blank">
+                                <svg class="icon-windows">
+                                    <use xlink:href="img/symbol/sprite.svg#icon-windows"></use>
+                                </svg>
+                                <span>WindowsPhone</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="endpoint article">
+                        <div class="title h2">Кредитные карты с такими же условиями</div>
+                        <div class="tags">
+                            <a href="#">10000 рублей</a>
+                            <a href="#">15000 рублей</a>
+                            <a href="#">30000 рублей</a>
+                            <a href="#">10000 рублей</a>
+                            <a href="#">15000 рублей</a>
+                            <a href="#">30000 рублей</a>
+                            <a href="#">10000 рублей</a>
+                            <a href="#">15000 рублей</a>
+                            <a href="#">30000 рублей</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div class="sticky">
+                        <div class="products-v">
+                            <div class="product pd-15 bg-violet-light">
+                                <figure>
+                                    <img src="img/img-card.jpg" alt="">
+                                </figure>
+                                <div class="rating">
+                                    <div class="stars" data-rating="3">
+                                        {% include 'stars.html' %}
+                                    </div>
+                                    <a href="#">4 отзыва</a>
+                                </div>
+                                <div class="product-options">
+                                    <dl>
+                                        <dt>
+                                            Кредитный лимит
+                                            <div class="hint">
+                                                <i class="icon-hint">?</i>
+                                                <div class="hint-text">
+                                                    Льготный период по уплате процентов, который
+                                                    распространяется на все операции покупок.
+                                                </div>
+                                            </div>
+                                        </dt>
+                                        <dd>до <b>100 000</b> руб.</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            Льготный период
+                                        </dt>
+                                        <dd>до <b>120</b> дней</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            Процентная ставка
+                                        </dt>
+                                        <dd>от <b>12%</b></dd>
+                                    </dl>
+                                </div>
+                                <a href="#" class="btn btn-violet w-100">Оформить карту</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-violet-light pt-4 pb-4">
+            <div class="products-v container mb-4">
+                <div class="title h1">Похожие карты</div>
+                <div class="slider-products">
+                    {% for i in range(0, 10) %}
+                        <div>
+                            <div class="product pd-15 bg-white">
+                                <a href="#" class="product-title">Виртуальная карта Квику</a>
+                                <div class="product-bank">
+                                    Kviku Online Bank
+                                </div>
+                                <div class="rating">
+                                    <div class="stars" data-rating="3">
+                                        {% include 'stars.html' %}
+                                    </div>
+                                    <a href="#">4 отзыва</a>
+                                </div>
+                                <figure>
+                                    <img src="img/img-card.jpg" alt="">
+                                </figure>
+                                <div class="product-options">
+                                    <dl>
+                                        <dt>
+                                            Кредитный лимит
+                                            <div class="hint">
+                                                <i class="icon-hint">?</i>
+                                                <div class="hint-text">
+                                                    Льготный период по уплате процентов, который
+                                                    распространяется на все операции покупок.
+                                                </div>
+                                            </div>
+                                        </dt>
+                                        <dd>до <b>100 000</b> руб.</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            Льготный период
+                                        </dt>
+                                        <dd>до <b>120</b> дней</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>
+                                            Процентная ставка
+                                        </dt>
+                                        <dd>от <b>12%</b></dd>
+                                    </dl>
+                                </div>
+                                <a href="#" class="btn btn-violet-light">Подробнее</a>
+                                <a href="#" class="btn btn-violet">Оформить карту</a>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
 
             </div>

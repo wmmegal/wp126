@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>DSGN</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id="page">
+    {% include 'header.html' %}
+    <main id="main">
+        <div class="container pt-25 pb-25 max-962">
+            <div class="breadcrumbs mb-1">
+                <a href="#">Главная</a>
+                <i class="icon-sep"></i>
+                <span>Статьи</span>
+            </div>
+            <div class="article">
+                <h1 class="title h1">Все продукты</h1>
+                <p>Одна из основных задач портала ВсеКредитныеКарты — персональный подбор кредитного продукта для
+                    конкретного человека.
+                    Мы сделали все возможное, чтобы каждый смог сделать лучший выбор:</p>
+                <form action="" class="search-form">
+                    <label class="form-field">
+                        <input type="text" placeholder="Введите название продукта или банка" name="s">
+                    </label>
+                    <button type="submit">
+                        <svg class="icon-search">
+                            <use xlink:href="img/symbol/sprite.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="bg-violet-light pt-25 pb-25">
+            <div class="container max-962">
+                <div class="search-results active v-2">
+                    <ul class="ul-reset">
+                        {% for i in range(0, 5) %}
+                            <li data-title="Тинькофф Платинум" class="search-item">
+                                <figure>
+                                    <img src="img/img-card.jpg" alt="">
+                                </figure>
+                                <div class="search-item-body">
+                                    <b>Тинькофф Платинум</b>
+                                    <div class="type">Кредитная карта</div>
+                                </div>
+                                <div class="rating">
+                                    <a href="#" target="_blank">8 отзывов</a>
+                                    <div class="stars" data-rating="3">
+                                        {% include 'stars.html' %}
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                        <li class="no-results">
+                            По вашему запросу <b>“Тинькофф”</b> ничего не найдено
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</div>
+{% include 'modals.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>
+

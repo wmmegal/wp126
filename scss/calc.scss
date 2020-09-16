@@ -1,0 +1,37 @@
+.calc {
+    .form-field {
+        .label {
+            color: #636363;
+        }
+    }
+
+    .calc-detail {
+        dl {
+            display: flex;
+            margin-bottom: 1rem;
+
+            dt {
+                color: #636363;
+                width: 50%;
+            }
+
+            dd {
+                color: #636363;
+
+                span {
+                    font-weight: bold;
+                    color: $text;
+                }
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    .payment-schedule {
+        display: none;
+        margin-top: 1.5rem;
+    }
+}

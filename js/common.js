@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(document).on('click', '#add-review .search-results li', function (e) {
+  $(document).on('click', '#add-review .search-results li', function () {
     autocompleteInput.val($(this).data('title'));
     $('[name=post_id]').val($(this).data('id'));
   });
@@ -113,4 +113,212 @@ jQuery(document).ready(function ($) {
     let val = $this.val() ? $this.val() + ' руб' : 'Любая';
     $this.closest('.filter-select').find('.selected-value').text(val);
   });
+
+  /**
+   * Ползунок в инпутах
+   */
+  $('.input-slider').each(function () {
+    let $this  = $(this),
+        $input = $this.closest('.input-with-slider').find('input'),
+        min    = $this.data('min') || 5000,
+        max    = $this.data('max') || 30000,
+        value  = $this.data('value') || 10000,
+        step   = $this.data('step') || 500,
+        $join  = $this.data('join') || 'Р';
+
+    $this.slider({
+      range: 'min',
+      animate: "fast",
+      step, min, max, value,
+      slide: function (event, ui) {
+        if ($join.indexOf('месяц') !== -1) {
+          $join = num2str(Number(ui.value), ['месяц', 'месяца', 'месяцев']);
+        } else if ($join !== '₽') {
+          $join = num2str(Number(ui.value), ['день', 'дня', 'дней']);
+        }
+        $input.val(ui.value + ' ' + $join);
+      },
+      change: function () {
+        calc_credit_cards($input);
+      }
+    });
+
+    $input.val($this.slider('value') + ' ' + $join);
+
+    $input.on('input', function () {
+      $this.slider('value', $(this).val());
+    });
+
+  });
+
+  if ($('.calc').length) {
+    calc_credit_cards($('.slider-sum'));
+  }
+
+  /**
+   * Показать график
+   */
+  $('.btn-schedule').on('click', function () {
+    $('.payment-schedule').slideToggle();
+  });
+
+  /**
+   * Кнопка с анкором
+   */
+  $('.btn-anchor').on('click', function (e) {
+    let $this = $(this);
+    let href = $this.attr('href');
+
+    if (!$(href).length) {
+      return;
+    }
+    $this.closest('li').addClass('active').siblings().removeClass('active');
+
+    e.preventDefault();
+
+    let blockOffset = $(href).offset().top;
+
+    $('html, body').animate({
+      scrollTop: blockOffset
+    }, 500);
+  });
+
+  /**
+   * Слайдер продуктов
+   */
+  $('.slider-products').slick({
+    dots: false,
+    arrows: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: true,
+          arrows: false,
+          slidesToShow: 1,
+        }
+      },
+    ]
+  });
 });
+
+/**
+ * Калькулятор
+ * @param $input
+ */
+function calc_credit_cards($input) {
+  let $form         = $input.closest('.calc'),
+      percent       = Number($form.data('percent')) / 100,
+      sum           = Number($form.find('.slider-sum').slider('value')),
+      months        = Number($form.find('.slider-months').slider('value')),
+      repayment_sum = calc_credit_card_sum(sum, months, percent),
+      month_payment = Math.ceil(repayment_sum / months),
+      current_date  = new Date();
+
+  current_date.setMonth(current_date.getMonth() + months);
+
+  $form.find('.repayment').text(repayment_sum + ' ₽');
+  $form.find('.repayment-date').text(formatDate(current_date));
+  $form.find('.month-payment').text(month_payment + ' ₽');
+  $form.find('.overpayment').text(repayment_sum - sum);
+
+  let table_data = build_schedule(repayment_sum, months, month_payment, percent);
+
+  $('.payment-schedule tbody').html('');
+  table_data.forEach(function (el) {
+    $('.payment-schedule tbody').append('<tr><td>' + el["number"] + ' </td><td>' + el["month_payment"] + ' </td><td>' + el["payment_percent"] + ' </td><td>' + el["sum"] || 0 + ' </td></tr>')
+  });
+}
+
+/**
+ * Считаем сумму для кредитной карты
+ */
+
+function calc_credit_card_sum(sum, period, percent) {
+  let end_sum = sum;
+  percent /= 12;
+
+  for (let i = 1; i <= period; i++) {
+    end_sum += end_sum * percent;
+  }
+
+  return Math.round(end_sum);
+}
+
+function build_schedule(sum, months, month_payment, percent) {
+  const whole_sum = sum;
+  let table = [];
+
+  for (let i = 1; i <= months; i++) {
+    let tr = { 'number': '', month_payment, 'payment_percent': 0, sum };
+    tr['sum'] = Math.ceil(whole_sum - month_payment * i);
+
+    if (tr['sum'] < 0) {
+      tr['sum'] = 0;
+    }
+
+    tr['payment_percent'] = month_payment + ' + ' + Math.ceil(tr['sum'] * percent / 12);
+
+    let current_date = new Date();
+    current_date.setMonth(current_date.getMonth() + i);
+
+    tr['number'] = '№' + i + ' ' + formatDate(current_date);
+    table.push(tr);
+  }
+
+  return table;
+}
+
+/**
+ * Правильное склонение
+ */
+function num2str(n, text_forms) {
+  n = Math.abs(n) % 100;
+  let n1 = n % 10;
+  if (n > 10 && n < 20) {
+    return text_forms[2];
+  }
+  if (n1 > 1 && n1 < 5) {
+    return text_forms[1];
+  }
+  if (n1 === 1) {
+    return text_forms[0];
+  }
+  return text_forms[2];
+}
+
+/**
+ * Форматирование даты
+ * @param date
+ * @returns {string}
+ */
+function formatDate(date) {
+
+  let dd = date.getDate();
+  if (dd < 10) dd = '0' + dd;
+
+  let mm = date.getMonth() + 1;
+  if (mm < 10) mm = '0' + mm;
+
+  let yy = date.getFullYear() % 100;
+  if (yy < 10) yy = '0' + yy;
+
+  return dd + '.' + mm + '.' + yy;
+}
+
+/**
+ * Строим урл
+ */
+function build_get_query(uri, param_name, param_value) {
+  if (param_value.length) {
+    uri.searchParams.set(param_name, param_value.join('-'));
+  } else {
+    uri.searchParams.delete(param_name);
+  }
+
+  return uri;
+}

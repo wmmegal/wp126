@@ -9,8 +9,9 @@
         background: #fff;
         border-bottom: 1px solid $border;
 
-        .col-md-3.line {
+        .line {
             border-right: 1px solid $border;
+            border-bottom: 0;
         }
 
         figure {
@@ -51,6 +52,7 @@
 
                     dt {
                         font-size: 0.875rem;
+                        color: rgba(31, 31, 31, 0.7);
                     }
                 }
             }
