@@ -1,0 +1,33 @@
+.btn-drop-toggle {
+
+    span {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .icon-arr-down {
+        transition: 0.3s all;
+        fill: $violet;
+    }
+
+    &.active {
+        .icon-arr-down {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.drop-list {
+    @extend %drop-list;
+    @extend %hidden;
+    left: 0;
+
+    li {
+        font-size: 1rem;
+    }
+
+    &.active {
+        @extend %visible;
+        z-index: 10;
+    }
+}

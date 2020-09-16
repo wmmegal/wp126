@@ -1,0 +1,160 @@
+.reviews-list {
+    position: relative;
+
+    .title {
+        @include media-breakpoint('xl') {
+            margin-bottom: 2rem;
+            padding-top: 0.75rem;
+        }
+    }
+
+    .review {
+        padding-bottom: 1.5rem;
+        position: relative;
+
+        figure {
+            width: 5.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+
+        &-head {
+            margin-bottom: 1.25rem;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+
+            .stars {
+                width: 100%;
+                margin-top: 0.5rem;
+                @include media-breakpoint('xl') {
+                    order: 2;
+                }
+            }
+        }
+
+        &-author {
+            line-height: 1.5rem;
+            margin-bottom: 0.5rem;
+
+            b {
+                font-size: 1.125rem;
+            }
+
+            span {
+                margin-left: 0.25rem;
+                opacity: 0.7;
+                font-size: 0.875rem;
+            }
+        }
+
+        &-text {
+            line-height: 1.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+
+            &-top {
+                display: flex;
+                align-items: center;
+                margin-left: -2rem;
+
+                i {
+                    width: 1.125rem;
+                    height: 1.125rem;
+                }
+
+                .icon-plus {
+                    background: url("../img/icon-plus.svg") no-repeat;
+                }
+
+                .icon-minus {
+                    background: url("../img/icon-minus.svg") no-repeat;
+                }
+
+                span {
+                    font-weight: bold;
+                    margin-left: 0.9rem;
+                }
+            }
+
+            &.v-2 {
+                padding-left: 2rem;
+            }
+        }
+
+        &-thumbs {
+            font-size: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+            @include media-breakpoint('md') {
+                justify-content: space-between;
+            }
+
+            a {
+                width: 7.5rem;
+                height: 5rem;
+                margin: 0 0.5rem 0.5rem 0;
+                @include media-breakpoint('md') {
+                    width: 32%;
+                    height: 4rem;
+                    margin: 0 0 0.5rem 0;
+                }
+            }
+        }
+
+        .likes {
+            display: flex;
+            align-items: baseline;
+
+            svg {
+                width: 1rem;
+                height: 0.875rem;
+            }
+
+            span {
+                @extend %dib;
+                font-size: 0.875rem;
+                margin-left: 0.5rem;
+            }
+
+            .btn-like {
+                svg {
+                    fill:$violet;
+                }
+            }
+
+            .btn-dislike {
+                margin-left: 1.25rem;
+
+                svg {
+                    fill:#eb5757;
+                }
+            }
+
+            button.active {
+                transition: 0.3s all;
+
+                &.active {
+                    opacity: 0.5;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .btn-add-review {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

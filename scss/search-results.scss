@@ -4,6 +4,7 @@
     width: 100%;
     right: auto;
     left: 0;
+    top: 100%;
     @include media-breakpoint('xl') {
         width: auto;
         left: 5vw;
@@ -22,6 +23,13 @@
         padding: 1.5rem;
         cursor: pointer;
 
+        & > a {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin: -1.5rem;
+            padding: 1.5rem;
+        }
         figure {
             width: 4.75rem;
             height: 3rem;

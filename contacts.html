@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>DSGN</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id="page">
+    {% include 'header.html' %}
+    <main id="main" class="container pb-4 pt-25">
+        <div class="breadcrumbs mb-1">
+            <a href="#">Главная</a>
+            <i class="icon-sep"></i>
+            <span>Статьи</span>
+        </div>
+        <section id="contacts" class="mb-3">
+            <h1 class="title h1">Контакты</h1>
+            <div class="row mb-3">
+                <div class="col-lg-4 mb-2-xl">
+                    <dl>
+                        <dt>Связь по любым вопросам</dt>
+                        <dd>
+                            <ul class="ul-reset">
+                                <li>
+                                    <svg class="icon-home">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-home"></use>
+                                    </svg>
+                                    115230, г.Москва, Каширское шоссе, дом 3, корпус 2, строение 4, пом. В512
+                                </li>
+                                <li>
+                                    <svg class="icon-phone-2">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-phone-2"></use>
+                                    </svg>
+                                    <a href="tel:+7(495) 640-47-80">+7(495) 640-47-80</a>
+                                </li>
+                                <li>
+                                    <svg class="icon-email-2">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-email-2"></use>
+                                    </svg>
+                                    <a href="mailto:info@bankiros.ru">info@bankiros.ru</a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-lg-4 mb-2-xl">
+                    <dl>
+                        <dt>Для представителей банков и МФО</dt>
+                        <dd>
+                            <ul class="ul-reset">
+                                <li>
+                                    <svg class="icon-phone-2">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-phone-2"></use>
+                                    </svg>
+                                    <a href="tel:+7(495) 640-47-80">+7(495) 640-47-80</a>
+                                </li>
+                                <li>
+                                    <svg class="icon-email-2">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-email-2"></use>
+                                    </svg>
+                                    <a href="mailto:info@bankiros.ru">info@bankiros.ru</a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-lg-4">
+                    <dl>
+                        <dt>Для обращений клиентов</dt>
+                        <dd>
+                            <ul class="ul-reset">
+                                <li>
+                                    <svg class="icon-phone-2">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-phone-2"></use>
+                                    </svg>
+                                    <a href="tel:+7(495) 640-47-80">+7(495) 640-47-80</a>
+                                </li>
+                                <li>
+                                    <svg class="icon-email-2">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-email-2"></use>
+                                    </svg>
+                                    <a href="mailto:info@bankiros.ru">info@bankiros.ru</a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="contact-map">
+                <img src="img/map.jpg" alt="">
+                <div class="contact-form">
+                    <div class="title h3">Есть вопросы?</div>
+                    <p>Оставьте ваше сообщение и мы с вами свяжемся в ближайшее время</p>
+                    <form action="" class="form">
+                        <label class="form-field">
+                            <input type="text" name="name" placeholder="Ваше имя">
+                        </label>
+                        <label class="form-field">
+                            <input type="email" name="email" placeholder="E-Mail">
+                        </label>
+                        <label class="form-field">
+                            <textarea name="text" placeholder="Оставьте ваше сообщение"></textarea>
+                        </label>
+                        <button class="btn btn-violet w-100">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="article">
+            <p>Самая маленькая пенсия у неработающего пенсионера приравнивается к прожиточному минимуму, который специально рассчитан для пожилых граждан ПМП. Ниже этого уровня государство попросту не имеет права назначить. ПМП утверждает правительство каждого региона для своих жителей. Неработающим пенсионерам, постоянно живущим в одном из субъектов федерации, у кого пенсия не достигает установленного минимума, назначают доплату.</p>
+            <h2>Кому выплачивают деньги</h2>
+            <p><b>Доплату из бюджета к минимальной пенсии выдают только тем, кто:</b></p>
+            <ul>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+            </ul>
+            <ol>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+                <li>Завершил трудовую деятельность и не устроен официально;</li>
+            </ol>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</div>
+{% include 'modals.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>
+

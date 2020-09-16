@@ -49,8 +49,8 @@
         font-size: 1.5rem;
     }
 
-    a {
-        @extend a;
+    a:not(.btn) {
+        @extend %a;
     }
 
     ul:not(.ul-reset) {
@@ -107,13 +107,12 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                font-weight: 700;
                 color: $violet;
                 width: 1.5rem;
                 height: 1.5rem;
                 line-height: 1.5rem;
                 border-radius: 1.5rem;
-                background: rgba($violet, 0.05);
+                border: 1px solid $violet;
                 display: flex;
                 align-items: center;
                 justify-content: center;

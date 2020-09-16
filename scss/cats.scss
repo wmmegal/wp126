@@ -26,4 +26,8 @@
         border-bottom: 1px solid $border;
         display: none;
     }
+
+    &.v-2 {
+        margin-top: 0;
+    }
 }

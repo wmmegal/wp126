@@ -1,8 +1,6 @@
 .reviews-add-form {
-    border-radius: 0.5rem;
     @include media-breakpoint('xl') {
         padding: 1rem;
-        margin: 0 -5vw;
     }
 
     p {

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>DSGN</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id="page">
+    {% include 'header.html' %}
+    <main id="main" class="pb-4 pt-25 bg-violet-light">
+        <div class="container">
+            <div class="breadcrumbs mb-1">
+                <a href="#">Главная</a>
+                <i class="icon-sep"></i>
+                <span>Статьи</span>
+            </div>
+            <div class="title h1">Все отзывы</div>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="bg-white">
+                        <div id="sort" class="line">
+                            <div class="sort-item">
+                                <button type="button" class="btn-drop-toggle">
+                                    <span>Сначала полезные</span>
+                                    <svg class="icon-arr-down">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
+                                    </svg>
+                                </button>
+                                <ul class="ul-reset drop-list">
+                                    <li><a href="#">Сначала полезные</a></li>
+                                    <li><a href="#">Новые</a></li>
+                                    <li><a href="#">Проверенные</a></li>
+                                </ul>
+                            </div>
+                            <div class="sort-item">
+                                <button type="button" class="btn-drop-toggle">
+                                    <span>Все оценки</span>
+                                    <svg class="icon-arr-down">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-arr-down"></use>
+                                    </svg>
+                                </button>
+                                <ul class="ul-reset drop-list">
+                                    <li><a href="#">Сначала полезные</a></li>
+                                    <li><a href="#">Новые</a></li>
+                                    <li><a href="#">Проверенные</a></li>
+                                </ul>
+                            </div>
+                            <form action="" class="quick-search-form">
+                                <label class="form-field">
+                                    <input type="text" placeholder="Введите название продукта или банка" name="s">
+                                </label>
+                                <button type="submit">
+                                    <svg class="icon-search">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-search"></use>
+                                    </svg>
+                                </button>
+                                <button type="button">
+                                    <svg class="icon-cross">
+                                        <use xlink:href="img/symbol/sprite.svg#icon-cross"></use>
+                                    </svg>
+                                </button>
+                                <div class="search-results">
+                                    <ul class="ul-reset">
+                                        {% for i in range(0, 5) %}
+                                            <li data-title="Тинькофф Платинум" class="search-item">
+                                                <a href="#">
+                                                    <figure>
+                                                        <img src="img/img-card.jpg" alt="">
+                                                    </figure>
+                                                    <div class="search-item-body">
+                                                        <b>Тинькофф Платинум</b>
+                                                        <div class="type">Кредитная карта</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                        <li class="no-results">
+                                            По вашему запросу <b>“Тинькофф”</b> ничего не найдено
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="reviews-list">
+                            {% for i in range(0, 5) %}
+                                <div class="review pd-15 line">
+                                    <figure>
+                                        <img src="img/img-card-2.jpg" alt="">
+                                    </figure>
+                                    <div class="review-head">
+                                        <div class="review-author">
+                                            <b>Иван</b>
+                                            <span>16 сентября 2019</span>
+                                        </div>
+                                        <div class="stars" data-rating="3">
+                                            {% include 'stars.html' %}
+                                        </div>
+                                    </div>
+                                    <div class="review-text">
+                                        Сотрудники CreditPlus названивают с напоминаем об уже оплаченном займе в 8 утра,
+                                        это как вообще?! Не берите здесь займ. Поддержки нормальной нет, только на почту
+                                        пиши и не факт, что ответят.
+                                        <br>
+                                        Система одобрения заявок в Moneyman мне тоже вообще не ясна. Когда не было
+                                        займов нигде,
+                                        тогда не дали. Когда было еще 3 текущих займа, то Moneyman одобрили.
+                                        Не рекомендую!
+                                    </div>
+                                    <div class="review-text v-2">
+                                        <div class="review-text-top">
+                                            <i class="icon-plus"></i>
+                                            <span>Плюсы</span>
+                                        </div>
+                                        Система одобрения заявок в Moneyman мне тоже вообще не ясна. Когда не было
+                                        займов нигде,
+                                        тогда не дали. Когда было еще 3 текущих займа, то Moneyman одобрили.
+                                        Не рекомендую!
+                                    </div>
+                                    <div class="review-text v-2">
+                                        <div class="review-text-top">
+                                            <i class="icon-minus"></i>
+                                            <span>Минусы</span>
+                                        </div>
+                                        Система одобрения заявок в Moneyman мне тоже вообще не ясна. Когда не было
+                                        займов нигде,
+                                        тогда не дали. Когда было еще 3 текущих займа, то Moneyman одобрили.
+                                        Не рекомендую!
+                                    </div>
+                                    {% if i == 1 %}
+                                        <div class="review-thumbs">
+                                            {% for j in range(0, 10) %}
+                                                <a href="img/img-thumb.jpg" data-fancybox="gallery"><img
+                                                            src="img/img-thumb.jpg"
+                                                            alt="" class="rounded object-fit"></a>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    <div class="likes">
+                                        <button class="btn-like">
+                                            <svg class="icon-like">
+                                                <use xlink:href="img/symbol/sprite.svg#icon-like"></use>
+                                            </svg>
+                                            <span>0</span>
+                                        </button>
+                                        <button class="btn-dislike">
+                                            <svg class="icon-dislike">
+                                                <use xlink:href="img/symbol/sprite.svg#icon-dislike"></use>
+                                            </svg>
+                                            <span>0</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {% include 'nav-links.html' %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 hidden-xl">
+                    <div class="bg-violet pd-15 mb-15">
+                        <div class="title h3 white">Оставьте отзыв</div>
+                        <div class="article white">
+                            <p>Расскажите о своем опыте использования банковских услуг</p>
+                            <a href="#" class="btn btn-white btn-small w-100">Оставить отзыв</a>
+                        </div>
+                    </div>
+                    <div class="bg-white pd-15">
+                        <div class="title h3">Отзывы</div>
+                        <div class="links-list">
+                            <ul class="ul-reset">
+                                {% for i in range(0, 5) %}
+                                    <li><a href="#">Отзывы о вкладах</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</div>
+{% include 'modals.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>
+

@@ -151,6 +151,7 @@ button {
     &:after {
         content: '';
         position: absolute;
+        width: 100%;
         bottom: 0;
         right: 0;
         left: 0;
@@ -189,5 +190,49 @@ button {
         width: 0.313rem;
         height: 0.5rem;
         margin: 0 .5rem;
+    }
+}
+
+.nav-links {
+    display: flex;
+    overflow: hidden;
+    background: #fff;
+
+    a, span {
+        width: 4rem;
+        line-height: 3.5rem;
+        border-right: 1px solid $border;
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+        @include media-breakpoint('xl') {
+            flex: auto;
+            height: 3rem;
+            font-size: 0.875rem;
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    a:hover, span {
+        color: #FFF;
+        background: $violet;
+    }
+}
+
+.links-list {
+    li {
+        margin-bottom: 0.75rem;
+
+        a {
+            font-size: 0.875rem;
+            @extend %a;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
     }
 }

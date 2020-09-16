@@ -46,4 +46,8 @@
             transform: rotate(180deg);
         }
     }
+
+    &.btn-small {
+        line-height: 3rem;
+    }
 }

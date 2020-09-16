@@ -1,0 +1,187 @@
+#filter {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    background: url("../img/bg-girl.png") no-repeat right #ebeef4;
+    background-size: auto 100%;
+    margin-bottom: 2.5rem;
+    @include media-breakpoint('xl') {
+        border-radius: 0;
+    }
+
+    .container {
+        padding: 2.5rem 0 4.5rem 0;
+        @include media-breakpoint('xl') {
+            padding: 1.5rem 0;
+        }
+
+        .breadcrumbs {
+            margin-top: 0;
+        }
+    }
+
+    .filter-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        max-width: 60%;
+        @include media-breakpoint('xl') {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 2rem;
+        }
+    }
+
+
+   .article {
+       color: #636363;
+       max-width: 60%;
+
+       p {
+           font-size: 1.125rem;
+       }
+   }
+
+    #filter-form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+        @include media-breakpoint('xl') {
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            position: relative;
+            width: calc(100% / 6);
+            flex: auto;
+            @include media-breakpoint('xl') {
+                width: 50%;
+                border-bottom: 1px solid $border;
+            }
+            @include media-breakpoint('md') {
+                margin-bottom: 0.5rem;
+                border-bottom: 0;
+                width: 100%;
+            }
+
+            .btn-drop-toggle {
+                flex: auto;
+                cursor: pointer;
+                background: #fff;
+                border-right: 1px solid $border;
+                position: relative;
+                height: 4.5rem;
+                display: flex;
+                padding: 1rem;
+                text-align: left;
+                flex-wrap: wrap;
+                width: 100%;
+                @include media-breakpoint('xl') {
+                    border: 0;
+                    height: auto;
+                    padding: 0.5rem 1rem;
+                }
+
+                span {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                }
+
+                .selected-value {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                    margin-top: 0.25rem;
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+
+                .icon-arr-down {
+                    @include center-y;
+                    width: 0.7rem;
+                    height: 0.513rem;
+                    right: 1.25rem;
+                    fill: rgba(21, 21, 21, 0.3);
+                    transition: $transition;
+                }
+
+                .icon-pencil {
+                    @include center-y;
+                    width: 1rem;
+                    height: 1rem;
+                    right: 1.25rem;
+                }
+
+                &.active {
+                    .icon-arr-down {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            &.no-border {
+                border-right: 0;
+                @include media-breakpoint('xl') {
+                    border-bottom: 0;
+                }
+            }
+
+            .drop-list {
+                .form-field {
+                    padding: 1rem;
+                }
+
+                li {
+                    padding: 1rem;
+
+                    .checkbox {
+                        display: block;
+
+                        cursor: pointer;
+
+                        input {
+                            display: none;
+                        }
+
+                        span {
+                            position: relative;
+                            display: block;
+                            padding: 1rem;
+                            margin: -1rem;
+                        }
+
+                        input:checked + span {
+                            &:before {
+                                content: '';
+                                background: url("../img/icon-tick-violet.svg") no-repeat;
+                                width: 0.688rem;
+                                height: 0.5rem;
+                                @include center-y;
+                                right: 1rem;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .btn {
+            height: 4.5rem;
+            border-radius: 0 0;
+            width: calc(100% / 6);
+            @include media-breakpoint('xl') {
+                height: 3.5rem;
+                width: 50%;
+
+            }
+            @include media-breakpoint('md') {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+    }
+}
+

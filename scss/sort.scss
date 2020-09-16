@@ -1,0 +1,45 @@
+#sort {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    @include media-breakpoint('xl') {
+        flex-wrap: wrap;
+        margin-bottom: 1rem !important;
+    }
+
+    .sort-item {
+        position: relative;
+        margin-right: 3rem;
+        @include media-breakpoint('xl') {
+            margin: 0 0 1rem 0;
+            width: 100%;
+        }
+
+        .sort-item-name {
+            opacity: 0.7;
+        }
+        .btn-drop-toggle {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .drop-list {
+            top: calc(100% + 0.5rem);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .btn-anchor {
+        margin-left: auto;
+
+        @include media-breakpoint('xl') {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

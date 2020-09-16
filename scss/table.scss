@@ -1,0 +1,25 @@
+.table {
+    background: #fff;
+    table {
+        width: 100%;
+
+        th {
+            padding: 1.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: left;
+            border-bottom: 1px solid $border;
+        }
+
+        td {
+            padding: 1.5rem;
+            border-bottom: 1px solid $border;
+            color: rgba($text, 0.7);
+
+            a {
+                color: $violet;
+                font-weight: bold;
+            }
+        }
+    }
+}
