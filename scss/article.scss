@@ -11,8 +11,9 @@
         float: left;
         margin-right: 20px;
         @include media-breakpoint('sm') {
-            max-width: 40%;
-            margin-right: 10px;
+            float: none;
+            width: 100%;
+            margin: 0 0 1.25rem 0;
         }
     }
 
@@ -21,8 +22,9 @@
         margin-left: 20px;
 
         @include media-breakpoint('sm') {
-            max-width: 40%;
-            margin-left: 10px;
+            float: none;
+            width: 100%;
+            margin: 0 0 1.25rem 0;
         }
     }
 
@@ -43,6 +45,9 @@
 
     h2 {
         font-size: 2rem;
+        @include media-breakpoint('md') {
+            font-size: 1.5rem;
+        }
     }
 
     h3 {

@@ -117,6 +117,7 @@
     .btn-clear {
         @include center-y;
         right: 1rem;
+        display: none;
 
         .icon-cross {
             width: 0.875rem;

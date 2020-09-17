@@ -1,21 +1,44 @@
 #cats {
     margin-top: -8rem;
+    @include media-breakpoint('xl') {
+        margin-top: -4rem;
+    }
 
     .cat {
         display: block;
         border-right: 1px solid $border;
         border-bottom: 1px solid $border;
         transition: 0.3s all;
+        @include media-breakpoint('xl') {
+            display: flex;
+            align-items: center;
+        }
 
         figure {
             line-height: 3rem;
             font-size: 0;
             margin-bottom: 1rem;
+            @include media-breakpoint('xl') {
+                margin-bottom: 0;
+                margin-left: -1rem;
+                width: 4rem;
+                text-align: center;
+                line-height: 1.75rem;
+
+                img {
+                    max-width: 1.75rem;
+                    height: auto;
+                }
+            }
         }
 
         .cat-name {
             display: block;
             font-weight: 700;
+            @include media-breakpoint('xl') {
+                font-size: 0.875rem;
+                width: calc(100% - 4rem);
+            }
         }
         &:hover {
             box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.08);

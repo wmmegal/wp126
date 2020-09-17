@@ -7,14 +7,21 @@
             position: relative;
             font-weight: 700;
             cursor: pointer;
+            @include media-breakpoint('xl') {
+                line-height: 1.5rem;
+                font-size: 0.875rem;
+            }
+
 
             .icon-arr-down {
+                @include center-y;
                 width: 0.75rem;
                 height: 0.438rem;
-                position: absolute;
-                top: 2rem;
                 right: 2rem;
                 transition: $transition;
+                @include media-breakpoint('xl') {
+                    right: 1rem;
+                }
             }
 
             &.active {

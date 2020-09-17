@@ -18,6 +18,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-9">
+                    <figure class="visible-md">
+                        <img src="img/img-card-3.jpg" alt="">
+                    </figure>
                     <h1 class="title h1">Тинькофф Платинум</h1>
                     <div class="card-bank">Тинькофф Банк</div>
                     <div class="rating">
@@ -93,7 +96,7 @@
                     </button>
                 </div>
                 <div class="col-lg-3">
-                    <figure>
+                    <figure class="hidden-md">
                         <img src="img/img-card-3.jpg" alt="">
                     </figure>
                     <div class="mb-15 input-with-slider">
@@ -157,7 +160,7 @@
                             </dl>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 mb-05-md">
                                 <button type="button" class="btn btn-violet-light w-100 btn-schedule">График платежей</button>
                             </div>
                             <div class="col-lg-6">
@@ -337,7 +340,7 @@
                             <div class="product">
                                 <div class="row no-gutters">
                                     <div class="col-md-4 line">
-                                        <div class="pd-15">
+                                        <div class="pd-15 hidden-md">
                                             <figure>
                                                 <img src="img/img-card.jpg" alt="">
                                             </figure>
@@ -358,6 +361,18 @@
                                             <div class="product-bank">
                                                 Kviku Online Bank
                                             </div>
+                                            <div class="visible-md">
+                                                <div class="rating">
+                                                    <div class="stars" data-rating="3">
+                                                        {% include 'stars.html' %}
+                                                    </div>
+                                                    <a href="#">4 отзыва</a>
+                                                </div>
+                                                <figure>
+                                                    <img src="img/img-card.jpg" alt="">
+                                                </figure>
+                                            </div>
+
                                             <div class="product-options">
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -391,7 +406,7 @@
                                                             <dd>от <b>12%</b></dd>
                                                         </dl>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 hidden-md">
                                                         <dl>
                                                             <dt>
                                                                 Стоимость
@@ -399,7 +414,7 @@
                                                             <dd><b>0</b> руб./год</dd>
                                                         </dl>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 hidden-md">
                                                         <dl>
                                                             <dt>
                                                                 Доставка
@@ -407,7 +422,7 @@
                                                             <dd>до <b>5</b> дней</dd>
                                                         </dl>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 hidden-md">
                                                         <dl>
                                                             <dt>
                                                                 Рассмотрение
@@ -416,6 +431,10 @@
                                                         </dl>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="visible-md">
+                                                <a href="#" class="btn btn-violet-light">Подробнее</a>
+                                                <a href="#" class="btn btn-violet">Оформить карту</a>
                                             </div>
                                         </div>
                                     </div>
@@ -470,7 +489,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 ">
+                <div class="col-lg-3 hidden-md">
                     <div class="sticky">
                         <div class="products-v">
                             <div class="product pd-15 bg-violet-light">
@@ -612,9 +631,9 @@
             </div>
             <div id="endpoint-5" class="container">
                 <div class="title h1">Отзывы <span class="number">6</span></div>
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="reviews-list bg-white mb-4">
+                <div class="row mb-1-lg">
+                    <div class="col-lg-9 mb-1-lg mb-4">
+                        <div class="reviews-list bg-white ">
                             {% for i in range(0, 5) %}
                                 <div class="review pd-15 line">
                                     <div class="review-head">
@@ -682,6 +701,22 @@
                                 </div>
                             {% endfor %}
                         </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="bg-white pd-15 sticky">
+                            <div class="title h3">Другие отзывы</div>
+                            <div class="links-list">
+                                <ul class="ul-reset">
+                                    {% for i in range(0, 5) %}
+                                        <li><a href="#">Отзывы о вкладах</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-9">
                         <div class="reviews-add-form bg-white pd-15">
                             <div class="title h1">Добавить отзыв</div>
                             <form action="" id="add-review" class="form">
@@ -724,13 +759,13 @@
                                     <input type="file" id="file">
                                 </label>
                                 <div class="row download-images">
-                                    <div class="col-md-2 col-sm-3">
+                                    <div class="col-md-2 col-3">
                                         <img src="img/img-card.jpg"
                                              alt="">
                                         <input type="hidden" name="gallery[]" value="937">
                                         <button class="btn-del-img" type="button" data-id="937">X</button>
                                     </div>
-                                    <div class="col-md-2 col-sm-3">
+                                    <div class="col-md-2 col-3">
                                         <img src="img/img-card.jpg"
                                              alt="">
                                         <input type="hidden" name="gallery[]" value="939">
@@ -751,20 +786,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="bg-white pd-15 sticky">
-                            <div class="title h3">Другие отзывы</div>
-                            <div class="links-list">
-                                <ul class="ul-reset">
-                                    {% for i in range(0, 5) %}
-                                        <li><a href="#">Отзывы о вкладах</a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
             </div>
         </div>
     </main>

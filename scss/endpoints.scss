@@ -16,8 +16,12 @@
             cursor: pointer;
             white-space: nowrap;
             @include media-breakpoint('xl') {
-                white-space: nowrap;
                 margin-right: 1.5rem;
+            }
+            @include media-breakpoint('xl') {
+                padding: 0.75rem 0;
+                font-size: 0.875rem;
+                font-weight: bold;
             }
 
 
@@ -36,10 +40,20 @@
                     background-color: $violet;
                 }
             }
+        }
+    }
 
-            &:last-child {
-                margin-right: 0;
-            }
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        z-index: 100;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+
+        ul {
+            padding: 0 5vw;
         }
     }
 }

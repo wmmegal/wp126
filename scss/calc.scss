@@ -9,6 +9,9 @@
         dl {
             display: flex;
             margin-bottom: 1rem;
+            @include media-breakpoint('md') {
+                justify-content: space-between;
+            }
 
             dt {
                 color: #636363;
@@ -34,4 +37,6 @@
         display: none;
         margin-top: 1.5rem;
     }
+
+
 }

@@ -1,4 +1,15 @@
 .cat-lists {
+
+    @include media-breakpoint('xl') {
+        [class*=col] {
+            margin-bottom: 1.5rem;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
     ul {
         li {
             margin-bottom: 1.25rem;

@@ -66,6 +66,9 @@ button {
     color: rgba(31, 31, 31, 0.7);
     font-size: 1rem;
     line-height: 1.5rem;
+    @include media-breakpoint('xl') {
+        font-size: 0.875rem;
+    }
 
     p {
         margin-bottom: 1.5rem;
@@ -111,6 +114,7 @@ button {
         border-radius: 50%;
         text-align: center;
         cursor: pointer;
+
     }
 
     .hint-text {
@@ -125,6 +129,17 @@ button {
         line-height: 1.25rem;
         border-left: 2px solid $violet;
         @extend %hidden;
+        @include media-breakpoint('md') {
+            width: 16rem;
+            visibility: visible;
+            opacity: 1;
+            transition: none;
+            @include center-x;
+            border-left: 0;
+            border-top: 2px solid $violet;
+            top: 2rem;
+            display: none;
+        }
 
         &:before {
             content: '';
@@ -133,10 +148,21 @@ button {
             left: -0.5rem;
             border: 0.2rem solid;
             border-color: transparent $violet transparent transparent;
+
+            @include media-breakpoint('md') {
+                @include center-x;
+                top: -0.5rem;
+                border-color: transparent transparent $violet transparent;
+            }
         }
     }
 
-    &:hover {
+    &:hover, &.active {
+        .icon-hint {
+            color: #FFF;
+            background: $violet;
+        }
+
         .hint-text {
             @extend %visible;
         }
@@ -147,6 +173,9 @@ button {
     position: relative;
     max-height: 5rem;
     overflow: hidden;
+    @include media-breakpoint('md') {
+        max-height: 0;
+    }
 
     &:after {
         content: '';
@@ -240,4 +269,12 @@ button {
 .sticky {
     position: sticky;
     top: 1rem;
+}
+
+#geo {
+    .table {
+        tr {
+            padding: 1rem;
+        }
+    }
 }

@@ -3,6 +3,10 @@
     .product {
         figure {
             margin-bottom: 1.25rem;
+
+            img {
+                width: 100%;
+            }
         }
 
         .rating {
@@ -58,12 +62,22 @@
         background: none;
         text-indent: -9999px;
         overflow: hidden;
+        @include media-breakpoint('xl') {
+            top: -2.2rem;
+        }
+        @include media-breakpoint('md') {
+            top: -2rem;
+        }
 
 
         &.slick-prev {
             transform: translateY(-50%) rotate(180deg);
             background: url("../img/icon-arr-next.svg") no-repeat;
             left: -2.25rem;
+            @include media-breakpoint('xl') {
+                right: 2.25rem;
+                left: auto;
+            }
 
 
             &.slick-disabled {
@@ -74,6 +88,9 @@
         &.slick-next {
             background: url("../img/icon-arr-next.svg") no-repeat;
             right: -2.25rem;
+            @include media-breakpoint('xl') {
+                right: 0;
+            }
 
             &.slick-disabled {
                 background: url("../img/icon-arr-prev.svg") no-repeat;

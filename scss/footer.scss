@@ -20,7 +20,7 @@
                 padding-left: 3.5rem;
                 @include media-breakpoint('lg') {
                     width: 50%;
-                    margin-bottom: 1rem;
+                    margin-bottom: 1.5rem;
                 }
                 @include media-breakpoint('md') {
                     width: 100%;
@@ -55,7 +55,14 @@
         }
     }
 
-    .col {
+    [class*=col] {
+        @include media-breakpoint('md') {
+            margin-bottom: 1rem;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
         ul {
             li {
                 margin-bottom: 1.25rem;
@@ -82,18 +89,37 @@
         border-top: 1px solid $border;
         margin-top: 2rem;
         padding: 1.5rem 0;
+        @include media-breakpoint('md') {
+            flex-wrap: wrap;
+        }
 
         p {
             font-size: 0.875rem;
             color: rgba($text, 0.7);
+            @include media-breakpoint('xl') {
+                max-width: 30%;
+            }
+
+            @include media-breakpoint('md') {
+                order: 1;
+                line-height: 1.5rem;
+                max-width: initial;
+            }
         }
 
         ul {
             display: flex;
             align-items: center;
+            @include media-breakpoint('md') {
+                order: 0;
+                display: block;
+            }
 
             li {
                 margin-left: 2.5rem;
+                @include media-breakpoint('md') {
+                    margin: 0 0 1rem 0;
+                }
 
                 a {
                     font-size: 0.875rem;

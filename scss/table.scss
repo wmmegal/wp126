@@ -4,6 +4,17 @@
 
     table {
         width: 100%;
+        @include media-breakpoint('md') {
+            display: block;
+
+            thead {
+                display: none;
+            }
+
+            tbody, tr {
+                display: block;
+            }
+        }
 
         th {
             padding: 1.5rem;
@@ -11,12 +22,29 @@
             font-size: 1rem;
             text-align: left;
             border-bottom: 1px solid $border;
+            @include media-breakpoint('md') {
+                display: block;
+            }
+        }
+
+        tr {
+            @include media-breakpoint('md') {
+                border-bottom: 1px solid $border;
+                padding: 0.5rem 0;
+            }
         }
 
         td {
             padding: 1.5rem;
             border-bottom: 1px solid $border;
             color: rgba($text, 0.7);
+            @include media-breakpoint('md') {
+                display: block;
+                font-size: 0.875rem;
+                border-bottom: 0;
+                padding: 0;
+                line-height: 1.5rem;
+            }
 
             a {
                 color: $violet;

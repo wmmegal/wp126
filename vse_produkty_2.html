@@ -36,6 +36,9 @@
         <div class="bg-violet-light pt-25 pb-25">
             <div class="container max-962">
                 <div class="search-results active v-2">
+                    <div class="search-results-text">
+                        По вашему запросу <b>“Тинькофф”</b> найдено 2 продукта
+                    </div>
                     <ul class="ul-reset">
                         {% for i in range(0, 5) %}
                             <li data-title="Тинькофф Платинум" class="search-item">
@@ -54,9 +57,6 @@
                                 </div>
                             </li>
                         {% endfor %}
-                        <li class="no-results">
-                            По вашему запросу <b>“Тинькофф”</b> ничего не найдено
-                        </li>
                     </ul>
                 </div>
             </div>

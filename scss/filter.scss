@@ -6,7 +6,7 @@
     background-size: auto 100%;
     margin-bottom: 2.5rem;
     @include media-breakpoint('xl') {
-        border-radius: 0;
+        background: #ebeef4;
     }
 
     .container {
@@ -26,21 +26,23 @@
         margin-bottom: 1rem;
         max-width: 60%;
         @include media-breakpoint('xl') {
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 2rem;
+            font-size: 1.75rem;
+            max-width: initial;
         }
     }
 
 
-   .article {
-       color: #636363;
-       max-width: 60%;
+    .article {
+        color: #636363;
+        max-width: 60%;
+        @include media-breakpoint('xl') {
+            max-width: initial;
+        }
 
-       p {
-           font-size: 1.125rem;
-       }
-   }
+        p {
+            font-size: 1.125rem;
+        }
+    }
 
     #filter-form {
         display: flex;

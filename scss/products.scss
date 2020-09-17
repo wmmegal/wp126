@@ -3,6 +3,10 @@
     #sort {
         background: #fff;
         padding: 1rem 1.5rem;
+        @include media-breakpoint('xl') {
+            background: none;
+            padding: 0;
+        }
     }
 
     .product {
@@ -18,11 +22,19 @@
             width: 100%;
             margin-bottom: 1.25rem;
             font-size: 0;
+
+            img {
+                width: 100%;
+            }
         }
 
         .rating {
             justify-content: center;
             margin-bottom: 1rem;
+
+            @include media-breakpoint('md') {
+                justify-content: flex-start;
+            }
         }
 
         .btn {
@@ -71,6 +83,9 @@
         .btn-toggle-text {
             display: flex;
             align-items: center;
+            @include media-breakpoint('md') {
+                margin-bottom: 1rem;
+            }
 
             span {
                 margin-right: 0.5rem;

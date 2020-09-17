@@ -16,12 +16,28 @@
         @extend %visible;
     }
 
+    .search-results-text {
+        margin-bottom: 1rem;
+        color: #636363;
+        @include media-breakpoint('md') {
+            font-size: 0.875rem;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
     .search-item {
+        background: #fff;
         display: flex;
         border-bottom: 1px solid $border;
         align-items: center;
         padding: 1.5rem;
         cursor: pointer;
+        @include media-breakpoint('md') {
+            padding: 1rem;
+        }
 
         & > a {
             display: flex;
@@ -30,6 +46,7 @@
             margin: -1.5rem;
             padding: 1.5rem;
         }
+
         figure {
             width: 4.75rem;
             height: 3rem;
@@ -43,7 +60,9 @@
         }
 
         .search-item-body {
-
+            @include media-breakpoint('md') {
+                width: calc(100% - 4.75rem);
+            }
             b {
                 color: $text;
                 font-weight: 700;
@@ -89,6 +108,8 @@
     }
 
     &.v-2 {
+        background: none;
         position: static;
+        box-shadow: none;
     }
 }

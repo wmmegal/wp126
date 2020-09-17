@@ -363,26 +363,7 @@
                 <div class="desc mb-15">
                     <p>Посмотрите предложения по кредитным картам от ведущих российских банков</p>
                 </div>
-                <div class="row no-gutters">
-                    {% for i in range(0, 4) %}
-                        <div class="col-lg-3 col-md-6">
-                            <div class="review pd-15">
-                                <figure>
-                                    <img src="img/img-card.jpg" alt="">
-                                </figure>
-                                <div class="rating">
-                                    <b>Александра</b>
-                                    <div class="stars" data-rating="3">
-                                        {% include 'stars.html' %}
-                                    </div>
-                                </div>
-                                <p>Странное поведение, сначала неделю навязывают карту под всеми предлогами, а потом
-                                    отказывают...
-                                    <a href="#">Читать далее</a></p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+                {% include 'review-cards.html' %}
                 <a href="#" class="btn btn-white w-100">
                     <span>Все отзывы</span>
                     <svg class="icon-arr-right">

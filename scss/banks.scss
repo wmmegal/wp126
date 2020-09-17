@@ -3,6 +3,12 @@
         [class*=col] {
             flex: 0 0 20%;
             max-width: 20%;
+            @include media-breakpoint('md') {
+                @include media-breakpoint('xl') {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
 
             .bank {
                 background: #fff;
@@ -18,6 +24,9 @@
                 img {
                     filter: grayscale(100%);
                     transition: $transition;
+                    @include media-breakpoint('xl') {
+                        max-width: 80%;
+                    }
                 }
 
                 &:hover {

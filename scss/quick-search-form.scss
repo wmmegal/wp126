@@ -2,10 +2,6 @@
     position: relative;
     flex: auto;
     @include media-breakpoint('xl') {
-        position: absolute;
-        bottom: 0;
-        left: -5vw;
-        right: -5vw;
         border-top: 1px solid $border;
     }
 

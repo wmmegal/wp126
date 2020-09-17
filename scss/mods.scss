@@ -16,6 +16,9 @@
 
 .pd-15 {
     padding: 1.5rem;
+    @include media-breakpoint('xl') {
+        padding: 1rem;
+    }
 }
 
 .pd-2 {
@@ -28,26 +31,54 @@
 
 .pt-25 {
     padding-top: 2.5rem;
+    @include media-breakpoint('md') {
+        padding-top: 1rem;
+    }
 }
 
 .pt-4 {
     padding-top: 4rem;
+    @include media-breakpoint('md') {
+        padding-top: 2rem;
+    }
 }
 
 .pb-25 {
     padding-bottom: 2.5rem;
+    @include media-breakpoint('md') {
+        padding-bottom: 1rem;
+    }
 }
 
 .pb-4 {
     padding-bottom: 4rem;
+    @include media-breakpoint('xl') {
+        padding-bottom: 2rem;
+    }
+}
+
+.mb-05-md {
+    margin-bottom: 0.5rem;
 }
 
 .mb-1 {
     margin-bottom: 1rem;
 }
 
+.mb-1-lg {
+    @include media-breakpoint('lg') {
+        margin-bottom: 1rem;
+    }
+}
+
 .mb-15 {
     margin-bottom: 1.5rem;
+}
+
+.mb-15-xl {
+    @include media-breakpoint('xl') {
+        margin-bottom: 1.5rem;
+    }
 }
 
 .mb-2 {
@@ -64,6 +95,23 @@
 
 .mb-4 {
     margin-bottom: 4rem;
+    @include media-breakpoint('xl') {
+        margin-bottom: 2rem;
+    }
+}
+
+.hidden-md {
+    @include media-breakpoint('md') {
+        display: none;
+    }
+}
+
+.visible-md {
+    display: none;
+
+    @include media-breakpoint('md') {
+        display: block;
+    }
 }
 
 .bg-violet-light {

@@ -195,15 +195,89 @@ jQuery(document).ready(function ($) {
     infinite: false,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
         breakpoint: 768,
         settings: {
-          dots: true,
-          arrows: false,
           slidesToShow: 1,
         }
       },
     ]
   });
+
+  /**
+   * Слайдер элементов в моб версии
+   */
+  $('.slider-items').slick({
+    dots: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
+
+  /**
+   * Подсказка моб
+   */
+  $('.icon-hint').on('click', function (e) {
+    $(this).closest('.hint').toggleClass('active').find('.hint-text').slideToggle();
+  });
+
+  $(document).on('click', function (e) {
+    if ($(e.target).is('.icon-hint') || $(e.target).closest('.hint').length) return;
+    $('.hint-text').fadeOut();
+    $('.hint').removeClass('active');
+    e.stopPropagation();
+  });
+
+  /**
+   * Меню
+   */
+
+  /**
+   * Меню для мобильного
+   */
+  $('.btn-menu').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('active').next().slideToggle()
+  })
+
+  const menuA = $('#nav a');
+  menuA.each(function () {
+    if ($(this).closest('li').find('ul').length) {
+      $(this).append(' <i class="icon-arr"></i>')
+    }
+  });
+
+  menuA.on('click', function (e) {
+    if ($(window).width() < 1199) {
+      let thisParent = $(this).closest('li'),
+          ul         = thisParent.find('> div');
+      if (ul.length > 0) {
+        e.preventDefault();
+        thisParent.toggleClass('open').siblings().removeClass('open').find('> div').slideUp();
+        ul.slideToggle();
+      }
+    }
+  });
+
+  /**
+   * Табы в карточке
+   */
+  const endpoints = $('.endpoint-names');
+
+  if (endpoints.length && $(window).width() < 1200) {
+    const fixedScroll = endpoints.offset().top;
+
+    $(document).on('scroll', function () {
+      $(window).scrollTop() > fixedScroll ? endpoints.addClass('fixed') : endpoints.removeClass('fixed');
+    })
+
+  }
 });
 
 /**

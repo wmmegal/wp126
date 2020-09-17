@@ -8,28 +8,86 @@
         @extend %flex-inline;
         z-index: 11;
 
+        .logo {
+            @include media-breakpoint('xl') {
+                width: 14.5rem;
+            }
+        }
+
+        .btn-menu {
+            display: none;
+            padding: 0 1rem;
+            border-left: 1px solid $border;
+            margin-right: -5vw;
+            height: 3.5rem;
+
+            @include media-breakpoint('xl') {
+                display: block;
+            }
+
+            .icon-burger {
+                @include burger(20px, 2px, 4px, $violet);
+                margin: 0 auto;
+            }
+
+            &.active {
+                .icon-burger {
+                    @include burger-to-cross;
+                }
+            }
+        }
+
         #nav {
+            @include media-breakpoint('xl') {
+                display: none;
+                position: absolute;
+                top: 3.5rem;
+                left: 0;
+                right: 0;
+                height: calc(100vh - 3.5rem);
+                background: #fff;
+                border-top: 1px solid $border;
+                padding: 0 5vw;
+                overflow: auto;
+            }
+
             > ul {
                 display: flex;
                 align-items: center;
+                @include media-breakpoint('xl') {
+                    display: block;
+                }
 
                 > li {
                     margin-left: 3.5rem;
+                    @include media-breakpoint('xl') {
+                        border-bottom: 1px solid $border;
+                        margin: 0;
+                    }
 
                     > a {
                         font-weight: bold;
                         display: block;
                         line-height: 5rem;
+                        @include media-breakpoint('xl') {
+                            line-height: normal;
+                            padding: 1rem 0;
+                            position: relative;
+                        }
 
                         .icon-arr {
                             background: url("../img/icon-arr-down.svg") no-repeat;
                             width: 0.5rem;
                             height: 0.313rem;
                             transition: $transition;
+                            @include media-breakpoint('xl') {
+                                @include center-y;
+                                right: 0;
+                            }
                         }
                     }
 
-                    &:hover {
+                    &:hover, &.open {
 
                         > a {
                             .icon-arr {
@@ -57,12 +115,23 @@
         transition: 0.5s all;
         z-index: 101;
         box-shadow: 0 8px 8px 4px rgba(0, 0, 0, 0.08);
+        @include media-breakpoint('xl') {
+            visibility: visible;
+            opacity: 1;
+            transition: none;
+            position: static;
+            box-shadow: none;
+            display: none;
+        }
 
         .container {
             display: block;
             position: relative;
             z-index: 10;
             padding: 1.25rem 0;
+            @include media-breakpoint('xl') {
+                width: 100%;
+            }
         }
     }
 }

@@ -28,4 +28,13 @@
             }
         }
     }
+
+    .btn-white {
+        text-align: right;
+    }
+
+    .slick-dots {
+        @extend %slick-dots;
+    }
+
 }

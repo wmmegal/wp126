@@ -1,24 +1,48 @@
 .banner {
-    background: url("../img/banner.jpg") no-repeat;
+    background: url("../img/banner.jpg") no-repeat right;
     height: 480px;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @include media-breakpoint('md') {
+        background: url("../img/banner-m.jpg") no-repeat right;
+        height: 512px;
+        background-size: cover;
+        padding: 3rem 1rem 0 1rem;
+        width: 100%;
+    }
 
     .title {
         font-size: 3.5rem;
         max-width: 41rem;
         margin-bottom: 1.5rem;
+        @include media-breakpoint('xl') {
+            max-width: 50%;
+        }
+        @include media-breakpoint('md') {
+            margin-bottom: 1rem;
+            max-width: 100%;
+        }
     }
 
     p {
         color: rgba($text, 0.7);
         font-size: 1.125rem;
+        @include media-breakpoint('xl') {
+            max-width: 50%;
+        }
+        @include media-breakpoint('md') {
+            margin-bottom: 1rem;
+            max-width: 100%;
+        }
     }
 
     .btn {
         align-self: flex-start;
         margin-top: auto;
+        @include media-breakpoint('md') {
+            margin-top: 0;
+        }
     }
 }
